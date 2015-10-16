@@ -1,0 +1,27 @@
+PODS:
+  - FMDB (2.5):
+    - FMDB/standard (= 2.5)
+  - FMDB/common (2.5)
+  - FMDB/standard (2.5):
+    - FMDB/common
+  - GreedDB (0.0.1):
+    - FMDB
+    - Masonry
+    - MJExtension
+  - Masonry (0.6.3)
+  - MJExtension (2.5.12)
+
+DEPENDENCIES:
+  - GreedDB (from `./`)
+
+EXTERNAL SOURCES:
+  GreedDB:
+    :path: ./
+
+SPEC CHECKSUMS:
+  FMDB: 96e8f1bcc1329e269330f99770ad4285d9003e52
+  GreedDB: a75742c26d1939e5284e99561121186f9ff98ef5
+  Masonry: ff105a956abcd19a618b2028b121cb638d7a8e2f
+  MJExtension: 5ab633484e431f777387c70b676c80f993361f1b
+
+COCOAPODS: 0.39.0
