@@ -116,7 +116,7 @@ Pod::Spec.new do |s|
   #  the lib prefix of their name.
   #
 
-  # s.framework  = "Foundation"
+   s.framework  = "Foundation"
   # s.frameworks = "Foundation"
 
   # s.library   = "iconv"
@@ -133,7 +133,6 @@ Pod::Spec.new do |s|
 
   # s.xcconfig = { "HEADER_SEARCH_PATHS" => "$(SDKROOT)/usr/include/libxml2" }
    s.dependency "FMDB"
-   s.dependency "Masonry"
    s.dependency "MJExtension"
 
 end
