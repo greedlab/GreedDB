@@ -1,3 +1,5 @@
 # GreedDB
 storage for ios
-#developing
+# Installation
+pod 'GreedDB'
+# 

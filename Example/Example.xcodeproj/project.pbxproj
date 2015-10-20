@@ -14,6 +14,8 @@
 		28771EEA1BD0DA06008ADAE9 /* GRTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28771EE91BD0DA06008ADAE9 /* GRTestViewController.m */; settings = {ASSET_TAGS = (); }; };
 		28771EF31BD10484008ADAE9 /* GRTestDefaultModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 28771EF21BD10484008ADAE9 /* GRTestDefaultModel.m */; settings = {ASSET_TAGS = (); }; };
 		28771EF91BD61900008ADAE9 /* GRTestMultFilterModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 28771EF81BD61900008ADAE9 /* GRTestMultFilterModel.m */; settings = {ASSET_TAGS = (); }; };
+		28771EFC1BD63AF7008ADAE9 /* GreedDB.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 28771EFA1BD63AF7008ADAE9 /* GreedDB.podspec */; settings = {ASSET_TAGS = (); }; };
+		28771EFD1BD63AF7008ADAE9 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 28771EFB1BD63AF7008ADAE9 /* README.md */; settings = {ASSET_TAGS = (); }; };
 		5A7B41FD28CE3A0EABB9A2E5 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CDBB88DEB27BC1936C90D630 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -32,6 +34,8 @@
 		28771EF21BD10484008ADAE9 /* GRTestDefaultModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GRTestDefaultModel.m; sourceTree = "<group>"; };
 		28771EF71BD61900008ADAE9 /* GRTestMultFilterModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GRTestMultFilterModel.h; sourceTree = "<group>"; };
 		28771EF81BD61900008ADAE9 /* GRTestMultFilterModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GRTestMultFilterModel.m; sourceTree = "<group>"; };
+		28771EFA1BD63AF7008ADAE9 /* GreedDB.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = GreedDB.podspec; path = ../GreedDB.podspec; sourceTree = "<group>"; };
+		28771EFB1BD63AF7008ADAE9 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		6F8BD2A14159D0FF13E82171 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "../Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		CDBB88DEB27BC1936C90D630 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -51,6 +55,8 @@
 		28771EBA1BD0D692008ADAE9 = {
 			isa = PBXGroup;
 			children = (
+				28771EFA1BD63AF7008ADAE9 /* GreedDB.podspec */,
+				28771EFB1BD63AF7008ADAE9 /* README.md */,
 				28771EC51BD0D692008ADAE9 /* Example */,
 				28771EC41BD0D692008ADAE9 /* Products */,
 				DCF405F004B39D26BD794A77 /* Pods */,
@@ -173,6 +179,7 @@
 			files = (
 				28771ED61BD0D692008ADAE9 /* LaunchScreen.storyboard in Resources */,
 				28771ED31BD0D692008ADAE9 /* Assets.xcassets in Resources */,
+				28771EFC1BD63AF7008ADAE9 /* GreedDB.podspec in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -231,6 +238,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				28771EFD1BD63AF7008ADAE9 /* README.md in Sources */,
 				28771EF31BD10484008ADAE9 /* GRTestDefaultModel.m in Sources */,
 				28771EEA1BD0DA06008ADAE9 /* GRTestViewController.m in Sources */,
 				28771ECB1BD0D692008ADAE9 /* AppDelegate.m in Sources */,
