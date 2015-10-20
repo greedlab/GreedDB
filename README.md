@@ -4,7 +4,7 @@ this is used for storage in ios. based on [FMDB](https://github.com/ccgus/fmdb) 
 pod 'GreedDB'
 # usage
 ## [GRDatabaseDefaultQueue](https://github.com/greedlab/GreedDB/blob/master/GreedDB/GRDatabaseDefaultQueue.h)
-used for the storage of [GRDatabaseDefaultModel](https://github.com/greedlab/GreedDB/blob/master/GreedDB/GRDatabaseDefaultModel.h)
+storage for the model [GRDatabaseDefaultModel](https://github.com/greedlab/GreedDB/blob/master/GreedDB/GRDatabaseDefaultModel.h)
 * * *
     GRDatabaseDefaultQueue *database = [[GRDatabaseDefaultQueue alloc] init];
     // set table name
@@ -21,7 +21,7 @@ used for the storage of [GRDatabaseDefaultModel](https://github.com/greedlab/Gre
     [database saveWithModel:dbModel];
 * * *
 ## [GRDatabaseMultFilterQueue](https://github.com/greedlab/GreedDB/blob/master/GreedDB/GRDatabaseMultFilterQueue.h)
-used for get value from mult filters. eg :search with more keys
+used for getting value from mult filters. eg :search with more keys
 * * *
     GRDatabaseMultFilterQueue database = [[GRDatabaseMultFilterQueue alloc] init];
     // set the key name of the value
