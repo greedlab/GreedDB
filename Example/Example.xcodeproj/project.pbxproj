@@ -11,12 +11,9 @@
 		28771ECB1BD0D692008ADAE9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 28771ECA1BD0D692008ADAE9 /* AppDelegate.m */; };
 		28771ED31BD0D692008ADAE9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 28771ED21BD0D692008ADAE9 /* Assets.xcassets */; };
 		28771ED61BD0D692008ADAE9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 28771ED41BD0D692008ADAE9 /* LaunchScreen.storyboard */; };
-		28771EE51BD0D9EB008ADAE9 /* GRDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = 28771EDF1BD0D9EB008ADAE9 /* GRDatabase.m */; settings = {ASSET_TAGS = (); }; };
-		28771EE61BD0D9EB008ADAE9 /* GRDatabaseDefaultModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 28771EE11BD0D9EB008ADAE9 /* GRDatabaseDefaultModel.m */; settings = {ASSET_TAGS = (); }; };
-		28771EE71BD0D9EB008ADAE9 /* NSObject+GreedDB.m in Sources */ = {isa = PBXBuildFile; fileRef = 28771EE41BD0D9EB008ADAE9 /* NSObject+GreedDB.m */; settings = {ASSET_TAGS = (); }; };
 		28771EEA1BD0DA06008ADAE9 /* GRTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28771EE91BD0DA06008ADAE9 /* GRTestViewController.m */; settings = {ASSET_TAGS = (); }; };
-		28771EED1BD0DBFB008ADAE9 /* GRDatabaseDefault.m in Sources */ = {isa = PBXBuildFile; fileRef = 28771EEC1BD0DBFB008ADAE9 /* GRDatabaseDefault.m */; settings = {ASSET_TAGS = (); }; };
-		28771EF31BD10484008ADAE9 /* GRTestModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 28771EF21BD10484008ADAE9 /* GRTestModel.m */; settings = {ASSET_TAGS = (); }; };
+		28771EF31BD10484008ADAE9 /* GRTestDefaultModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 28771EF21BD10484008ADAE9 /* GRTestDefaultModel.m */; settings = {ASSET_TAGS = (); }; };
+		28771EF91BD61900008ADAE9 /* GRTestMultFilterModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 28771EF81BD61900008ADAE9 /* GRTestMultFilterModel.m */; settings = {ASSET_TAGS = (); }; };
 		5A7B41FD28CE3A0EABB9A2E5 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CDBB88DEB27BC1936C90D630 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -29,19 +26,12 @@
 		28771ED21BD0D692008ADAE9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		28771ED51BD0D692008ADAE9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		28771ED71BD0D692008ADAE9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		28771EDE1BD0D9EB008ADAE9 /* GRDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GRDatabase.h; sourceTree = "<group>"; };
-		28771EDF1BD0D9EB008ADAE9 /* GRDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GRDatabase.m; sourceTree = "<group>"; };
-		28771EE01BD0D9EB008ADAE9 /* GRDatabaseDefaultModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GRDatabaseDefaultModel.h; sourceTree = "<group>"; };
-		28771EE11BD0D9EB008ADAE9 /* GRDatabaseDefaultModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GRDatabaseDefaultModel.m; sourceTree = "<group>"; };
-		28771EE21BD0D9EB008ADAE9 /* GreedDB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GreedDB.h; sourceTree = "<group>"; };
-		28771EE31BD0D9EB008ADAE9 /* NSObject+GreedDB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+GreedDB.h"; sourceTree = "<group>"; };
-		28771EE41BD0D9EB008ADAE9 /* NSObject+GreedDB.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+GreedDB.m"; sourceTree = "<group>"; };
 		28771EE81BD0DA06008ADAE9 /* GRTestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GRTestViewController.h; sourceTree = "<group>"; };
 		28771EE91BD0DA06008ADAE9 /* GRTestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GRTestViewController.m; sourceTree = "<group>"; };
-		28771EEB1BD0DBFB008ADAE9 /* GRDatabaseDefault.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GRDatabaseDefault.h; sourceTree = "<group>"; };
-		28771EEC1BD0DBFB008ADAE9 /* GRDatabaseDefault.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GRDatabaseDefault.m; sourceTree = "<group>"; };
-		28771EF11BD10484008ADAE9 /* GRTestModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GRTestModel.h; sourceTree = "<group>"; };
-		28771EF21BD10484008ADAE9 /* GRTestModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GRTestModel.m; sourceTree = "<group>"; };
+		28771EF11BD10484008ADAE9 /* GRTestDefaultModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GRTestDefaultModel.h; sourceTree = "<group>"; };
+		28771EF21BD10484008ADAE9 /* GRTestDefaultModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GRTestDefaultModel.m; sourceTree = "<group>"; };
+		28771EF71BD61900008ADAE9 /* GRTestMultFilterModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GRTestMultFilterModel.h; sourceTree = "<group>"; };
+		28771EF81BD61900008ADAE9 /* GRTestMultFilterModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GRTestMultFilterModel.m; sourceTree = "<group>"; };
 		6F8BD2A14159D0FF13E82171 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "../Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		CDBB88DEB27BC1936C90D630 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -82,14 +72,15 @@
 				28771EC91BD0D692008ADAE9 /* AppDelegate.h */,
 				28771ECA1BD0D692008ADAE9 /* AppDelegate.m */,
 				28771ED21BD0D692008ADAE9 /* Assets.xcassets */,
-				28771EDD1BD0D9EB008ADAE9 /* GreedDB */,
+				28771EF11BD10484008ADAE9 /* GRTestDefaultModel.h */,
+				28771EF21BD10484008ADAE9 /* GRTestDefaultModel.m */,
+				28771EF71BD61900008ADAE9 /* GRTestMultFilterModel.h */,
+				28771EF81BD61900008ADAE9 /* GRTestMultFilterModel.m */,
 				28771EE81BD0DA06008ADAE9 /* GRTestViewController.h */,
 				28771EE91BD0DA06008ADAE9 /* GRTestViewController.m */,
 				28771ED71BD0D692008ADAE9 /* Info.plist */,
 				28771ED41BD0D692008ADAE9 /* LaunchScreen.storyboard */,
 				28771EC61BD0D692008ADAE9 /* Supporting Files */,
-				28771EF11BD10484008ADAE9 /* GRTestModel.h */,
-				28771EF21BD10484008ADAE9 /* GRTestModel.m */,
 			);
 			path = Example;
 			sourceTree = "<group>";
@@ -100,23 +91,6 @@
 				28771EC71BD0D692008ADAE9 /* main.m */,
 			);
 			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		28771EDD1BD0D9EB008ADAE9 /* GreedDB */ = {
-			isa = PBXGroup;
-			children = (
-				28771EDE1BD0D9EB008ADAE9 /* GRDatabase.h */,
-				28771EDF1BD0D9EB008ADAE9 /* GRDatabase.m */,
-				28771EEB1BD0DBFB008ADAE9 /* GRDatabaseDefault.h */,
-				28771EEC1BD0DBFB008ADAE9 /* GRDatabaseDefault.m */,
-				28771EE01BD0D9EB008ADAE9 /* GRDatabaseDefaultModel.h */,
-				28771EE11BD0D9EB008ADAE9 /* GRDatabaseDefaultModel.m */,
-				28771EE21BD0D9EB008ADAE9 /* GreedDB.h */,
-				28771EE31BD0D9EB008ADAE9 /* NSObject+GreedDB.h */,
-				28771EE41BD0D9EB008ADAE9 /* NSObject+GreedDB.m */,
-			);
-			name = GreedDB;
-			path = ../../GreedDB;
 			sourceTree = "<group>";
 		};
 		39C2C5A434FD71489D6F0472 /* Frameworks */ = {
@@ -257,13 +231,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				28771EE71BD0D9EB008ADAE9 /* NSObject+GreedDB.m in Sources */,
-				28771EE51BD0D9EB008ADAE9 /* GRDatabase.m in Sources */,
-				28771EF31BD10484008ADAE9 /* GRTestModel.m in Sources */,
-				28771EE61BD0D9EB008ADAE9 /* GRDatabaseDefaultModel.m in Sources */,
+				28771EF31BD10484008ADAE9 /* GRTestDefaultModel.m in Sources */,
 				28771EEA1BD0DA06008ADAE9 /* GRTestViewController.m in Sources */,
 				28771ECB1BD0D692008ADAE9 /* AppDelegate.m in Sources */,
-				28771EED1BD0DBFB008ADAE9 /* GRDatabaseDefault.m in Sources */,
+				28771EF91BD61900008ADAE9 /* GRTestMultFilterModel.m in Sources */,
 				28771EC81BD0D692008ADAE9 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

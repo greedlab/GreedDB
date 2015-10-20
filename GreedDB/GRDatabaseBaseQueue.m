@@ -1,14 +1,14 @@
 //
-//  GRDatabase.m
+//  GRDatabaseBaseQueue.m
 //  GreedDBDemo
 //
 //  Created by Bell on 15/10/16.
 //  Copyright © 2015年 GreedLab. All rights reserved.
 //
 
-#import "GRDatabase.h"
+#import "GRDatabaseBaseQueue.h"
 
-@implementation GRDatabase
+@implementation GRDatabaseBaseQueue
 
 #pragma mark - init
 
@@ -26,7 +26,7 @@
 - (NSString *)tableName
 {
     if (!_tableName) {
-        _tableName = @"defaultTable";
+        _tableName = @"baseQueue";
     }
     return _tableName;
 }
@@ -53,6 +53,8 @@
 
 - (BOOL)createTable
 {
+    // TODO
+    
     return YES;
 }
 

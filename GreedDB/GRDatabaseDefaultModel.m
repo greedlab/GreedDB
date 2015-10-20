@@ -7,7 +7,7 @@
 //
 
 #import "GRDatabaseDefaultModel.h"
-#import <MJExtension/MJExtension.h>
+#import "NSObject+GreedDB.h"
 
 @implementation GRDatabaseDefaultModel
 
@@ -16,23 +16,14 @@
     return @[@"valueDictionary"];
 }
 
-- (NSMutableDictionary*)dbDictionary
+- (NSMutableDictionary *)dbDictionary
 {
     if (!_value && _valueDictionary) {
         [self setValue:[_valueDictionary JSONString]];
     }
-    NSMutableDictionary *dbDictionary = self.keyValues;
+    NSMutableDictionary *keyValues = [self gr_keyValues];
     
-    if (!_key) {
-        [dbDictionary setObject:[NSNull null] forKey:@"key"];
-    }
-    if (!_filter) {
-        [dbDictionary setObject:[NSNull null] forKey:@"filter"];
-    }
-    if (!_value) {
-        [dbDictionary setObject:[NSNull null] forKey:@"value"];
-    }
-    return dbDictionary;
+    return keyValues;
 }
 
 @end

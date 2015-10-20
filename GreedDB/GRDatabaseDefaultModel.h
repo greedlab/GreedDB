@@ -14,7 +14,7 @@
 @interface GRDatabaseDefaultModel : NSObject
 
 @property(nonatomic,strong)NSString *key;
-@property(nonatomic,strong)NSString *value;
+@property(nonatomic,strong)id value;
 @property(nonatomic,strong)NSDictionary *valueDictionary;
 
 @property(nonatomic,strong)NSString *filter;

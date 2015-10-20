@@ -7,7 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "GreedDB.h"
 
 @interface GRTestViewController : UIViewController
+
+@property(nonatomic,strong)GRDatabaseDefaultQueue *database;
+@property(nonatomic,strong)GRDatabaseMultFilterQueue *multFilterQueue;
 
 @end

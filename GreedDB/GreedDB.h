@@ -12,6 +12,9 @@
 
 #endif /* GreedDB_h */
 
-#import "GRDatabase.h"
-#import "GRDatabaseDefault.h"
+#import "GRDatabaseBaseQueue.h"
+#import "GRDatabaseDefaultQueue.h"
 #import "GRDatabaseDefaultModel.h"
+#import "GRDatabaseMultFilterQueue.h"
+
+#import "NSObject+GreedDB.h"

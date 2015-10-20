@@ -1,13 +1,13 @@
 //
-//  GRTestModel.m
+//  GRTestDefaultModel.m
 //  Example
 //
 //  Created by Bell on 15/10/16.
 //  Copyright © 2015年 GreedLab. All rights reserved.
 //
 
-#import "GRTestModel.h"
+#import "GRTestDefaultModel.h"
 
-@implementation GRTestModel
+@implementation GRTestDefaultModel
 
 @end

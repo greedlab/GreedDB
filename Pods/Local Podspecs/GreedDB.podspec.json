@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "summary": "A short description of GreedDB.",
   "description": "",
-  "homepage": "http://EXAMPLE/GreedDB",
+  "homepage": "https://github.com/greedlab/GreedDB",
   "license": "MIT (example)",
   "authors": {
     "Bell": "bell@greedlab.com"
@@ -12,14 +12,13 @@
     "ios": "6.0"
   },
   "source": {
-    "git": "http://EXAMPLE/GreedDB.git",
+    "git": "https://github.com/greedlab/GreedDB.git",
     "tag": "0.0.1"
   },
   "source_files": [
-    "Classes",
-    "Classes/**/*.{h,m}"
+    "GreedDB",
+    "GreedDB/*.{h,m}"
   ],
-  "exclude_files": "Classes/Exclude",
   "requires_arc": true,
   "dependencies": {
     "FMDB": [

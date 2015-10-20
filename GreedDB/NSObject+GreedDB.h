@@ -7,9 +7,22 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <MJExtension/MJExtension.h>
 
 @interface NSObject (GreedDB)
 
 + (id)EntityWithJsonString:(NSString*)jsonString;
+
+/**
+ *  if value is nil set [NSNull null]
+ *
+ *  @return keyValues
+ */
+- (NSMutableDictionary *)gr_keyValues;
+
+/**
+ *  get all valid properties
+ */
+- (NSMutableArray *)gr_properties;
 
 @end

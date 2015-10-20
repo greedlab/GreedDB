@@ -1,18 +1,23 @@
 //
-//  GRDatabaseDefault.h
+//  GRDatabaseDefaultQueue.h
 //  Example
 //
 //  Created by Bell on 15/10/16.
 //  Copyright © 2015年 GreedLab. All rights reserved.
 //
 
-#import "GRDatabase.h"
+#import "GRDatabaseBaseQueue.h"
 #import "GRDatabaseDefaultModel.h"
 
 /**
  *  process database
  */
-@interface GRDatabaseDefault : GRDatabase
+@interface GRDatabaseDefaultQueue : GRDatabaseBaseQueue
+
+/**
+ *  whether value is blob. default NO
+ */
+@property(nonatomic,assign)BOOL blobValue;
 
 #pragma mark - save
 /**
@@ -38,8 +43,8 @@
  */
 #pragma mark - sort - filter
 
-- (NSArray*)getValuesByKey:(NSString*)key filter:(NSString*)filter sort:(BOOL)sort;
-- (NSArray*)getKeysByFilter:(NSString*)filter sort:(BOOL)sort;
+- (NSMutableArray*)getValuesByKey:(NSString*)key filter:(NSString*)filter sort:(BOOL)sort;
+- (NSMutableArray*)getKeysByFilter:(NSString*)filter sort:(BOOL)sort;
 - (NSString*)getFirstKeyByFilter:(NSString*)filter;
 - (NSString*)getLastKeyByFilter:(NSString*)filter;
 
@@ -49,7 +54,7 @@
  */
 #pragma mark - sort  - no filter
 
-- (NSArray*)getValuesByKey:(NSString*)key sort:(BOOL)sort;
+- (NSMutableArray*)getValuesByKey:(NSString*)key sort:(BOOL)sort;
 - (NSString*)getFirstKey;
 - (NSString*)getLastKey;
 
@@ -59,9 +64,9 @@
  */
 #pragma mark - no sort - filter
 
-- (NSArray*)getValuesByKey:(NSString*)key filter:(NSString*)filter;
-- (NSString*)getValueByKey:(NSString*)key filter:(NSString*)filter;
-- (BOOL)updateValue:(NSString*)value byKey:(NSString*)key filter:(NSString*)filter;
+- (NSMutableArray*)getValuesByKey:(NSString*)key filter:(NSString*)filter;
+- (id)getValueByKey:(NSString*)key filter:(NSString*)filter;
+- (BOOL)updateValue:(id)value byKey:(NSString*)key filter:(NSString*)filter;
 - (BOOL)delByKey:(NSString*)key filter:(NSString*)filter;
 
 /**
@@ -70,9 +75,9 @@
  */
 #pragma mark - no sort - no filter
 
-- (NSArray*)getValuesByKey:(NSString*)key;
-- (NSString*)getValueByKey:(NSString*)key;
-- (BOOL)updateValue:(NSString*)value byKey:(NSString*)key;
+- (NSMutableArray*)getValuesByKey:(NSString*)key;
+- (id)getValueByKey:(NSString*)key;
+- (BOOL)updateValue:(id)value byKey:(NSString*)key;
 - (BOOL)delByKey:(NSString*)key;
 
 @end

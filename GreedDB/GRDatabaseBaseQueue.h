@@ -1,5 +1,5 @@
 //
-//  GRDatabase.h
+//  GRDatabaseBaseQueue.h
 //  GreedDBDemo
 //
 //  Created by Bell on 15/10/16.
@@ -13,8 +13,14 @@
 /**
  *  表操作
  */
-@interface GRDatabase : NSObject
+@interface GRDatabaseBaseQueue : NSObject
+{
+    NSString *_tableName;
+}
 
+/**
+ *  table name
+ */
 @property(nonatomic,strong)NSString *tableName;
 
 /**
@@ -38,6 +44,9 @@
 
 - (BOOL)dropTable;
 
+/**
+ *  drop table and create table
+ */
 - (BOOL)recreateTable;
 
 @end

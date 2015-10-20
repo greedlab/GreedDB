@@ -1,5 +1,5 @@
 //
-//  GRTestModel.h
+//  GRTestDefaultModel.h
 //  Example
 //
 //  Created by Bell on 15/10/16.
@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface GRTestModel : NSObject
+@interface GRTestDefaultModel : NSObject
 
 @property(nonatomic,strong)NSString *string;
 @property(nonatomic,assign)NSInteger integer;
