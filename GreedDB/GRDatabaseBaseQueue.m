@@ -16,20 +16,12 @@
 {
     self = [super init];
     if (self) {
-        
+        _tableName = @"baseQueue";
     }
     return self;
 }
 
 #pragma mark - getter
-
-- (NSString *)tableName
-{
-    if (!_tableName) {
-        _tableName = @"baseQueue";
-    }
-    return _tableName;
-}
 
 - (NSString*)dbPath
 {

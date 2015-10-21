@@ -13,16 +13,18 @@
 
 + (NSArray *)ignoredPropertyNames
 {
-    return @[@"valueDictionary"];
+    return @[@"value"];
 }
 
 - (NSMutableDictionary *)dbDictionary
 {
-    if (!_value && _valueDictionary) {
-        [self setValue:[_valueDictionary JSONString]];
-    }
     NSMutableDictionary *keyValues = [self gr_keyValues];
-    
+    NSString *value = [_value gr_JSONString];
+    if (value) {
+        [keyValues setValue:value forKey:@"value"];
+    } else {
+        [keyValues setValue:[NSNull null] forKey:@"value"];
+    }
     return keyValues;
 }
 

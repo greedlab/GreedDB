@@ -13,7 +13,7 @@
  */
 @interface GRDatabaseMultFilterQueue : GRDatabaseBaseQueue
 
-@property(nonatomic,strong)NSArray *filterNames;
+@property(nonatomic,strong)NSArray<NSString*> *filterNames;
 @property(nonatomic,strong)NSString *valueName;
 
 - (BOOL)saveWithValueFiltersDictionary:(NSDictionary*)dictionary;

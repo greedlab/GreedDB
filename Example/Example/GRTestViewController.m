@@ -22,7 +22,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.view.backgroundColor = [UIColor whiteColor];
-    [self testMultFilter];
+    [self testDefault];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -37,6 +37,7 @@
     [self initDefault];
     [self saveDefault];
     [self updateDefault];
+    [self getDefault];
 }
 
 - (void)initDefault
@@ -53,21 +54,34 @@
     GRTestDefaultModel *model = [[GRTestDefaultModel alloc] init];
     model.string = @"string";
     model.integer =  1;
+    NSString *filter = [GRTestDefaultModel filterForFilter1:@"filter1" filter2:@"filter1"];
     
     GRDatabaseDefaultModel *dbModel = [[GRDatabaseDefaultModel alloc] init];
-    [dbModel setKey:@"key1"];
-    [dbModel setValueDictionary:[model keyValues]];
+    [dbModel setKey:@1];
+    [dbModel setValue:model];
+    [dbModel setFilter:filter];
     
     [_database saveWithModel:dbModel];
 }
 
 - (void)updateDefault
 {
+    NSString *filter = [GRTestDefaultModel filterForFilter1:@"filter1" filter2:@"filter1"];
+    
     GRTestDefaultModel *model = [[GRTestDefaultModel alloc] init];
     model.string = @"update";
     model.integer =  2;
     
-    [_database updateValue:[[model keyValues] JSONString] byKey:@"key1"];
+    [_database updateValue:model byKey:@1 filter:filter];
+}
+
+- (void)getDefault
+{
+    NSString *filter = [GRTestDefaultModel filterForFilter1:@"filter1" filter2:@"filter1"];
+    
+    NSArray *array = [_database getValuesByKey:@1 filter:filter];
+    
+    NSLog(@"%@",array);
 }
 
 #pragma mark - MultFilter

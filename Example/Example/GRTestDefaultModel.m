@@ -10,4 +10,9 @@
 
 @implementation GRTestDefaultModel
 
++ (NSString*)filterForFilter1:(NSString*)filter1 filter2:(NSString*)filter2
+{
+    return [NSString stringWithFormat:@"%@_%@",filter1 ? filter1 : @"NULL",filter2 ? filter2 : @"NULL"];
+}
+
 @end

@@ -12,12 +12,19 @@
  *  Default Model
  */
 @interface GRDatabaseDefaultModel : NSObject
-
-@property(nonatomic,strong)NSString *key;
+/**
+ *  can be NSString or NSNumber
+ */
+@property(nonatomic,strong)id key;
+/**
+ *  can be NSDictionary,NSArray,NSData,NSString,NSNumber or NSObject
+ */
 @property(nonatomic,strong)id value;
-@property(nonatomic,strong)NSDictionary *valueDictionary;
+/**
+ *  can be NSString or NSNumber
+ */
+@property(nonatomic,strong)id filter;
 
-@property(nonatomic,strong)NSString *filter;
 @property(nonatomic,assign)long long sort;
 
 - (NSMutableDictionary*)dbDictionary;

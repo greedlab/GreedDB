@@ -37,6 +37,26 @@
     return keyValues;
 }
 
+- (NSString *)gr_JSONString
+{
+    if (self) {
+        if ([self isKindOfClass:[NSString class]]) {
+            return (NSString*)self;
+        } else if ([self isKindOfClass:[NSDictionary class]]
+                   || [self isKindOfClass:[NSArray class]]
+                   || [self isKindOfClass:[NSData class]]) {
+            return [self JSONString];
+        } else if ([self isKindOfClass:[NSNumber class]]) {
+            return [(NSNumber*)self stringValue];
+        } else {
+            NSDictionary *dictionary = [self keyValues];
+            return [dictionary JSONString];
+        }
+    } else {
+        return nil;
+    }
+}
+
 - (NSMutableArray *)gr_properties
 {
     Class aClass = [self class];

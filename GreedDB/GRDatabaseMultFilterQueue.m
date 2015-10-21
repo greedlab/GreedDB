@@ -11,22 +11,14 @@
 
 @implementation GRDatabaseMultFilterQueue
 
-#pragma mark - getter
-
-- (NSString *)tableName
+- (instancetype)init
 {
-    if (!_tableName) {
+    self = [super init];
+    if (self) {
         _tableName = @"multFilterQueue";
-    }
-    return _tableName;
-}
-
-- (NSString *)valueName
-{
-    if (!_valueName) {
         _valueName = @"value";
     }
-    return _valueName;
+    return self;
 }
 
 #pragma mark - GRDatabaseBaseQueue

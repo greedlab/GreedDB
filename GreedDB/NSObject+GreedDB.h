@@ -21,6 +21,13 @@
 - (NSMutableDictionary *)gr_keyValues;
 
 /**
+ *  used for turning NSString,NSDictionary,NSArray,NSData,NSNumber,NSObject to JSONString
+ *
+ *  @return JSONString
+ */
+- (NSString *)gr_JSONString;
+
+/**
  *  get all valid properties
  */
 - (NSMutableArray *)gr_properties;

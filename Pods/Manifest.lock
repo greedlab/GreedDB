@@ -6,10 +6,8 @@ PODS:
     - FMDB/common
   - GreedDB (0.0.1):
     - FMDB
-    - Masonry
     - MJExtension
-  - Masonry (0.6.3)
-  - MJExtension (2.5.12)
+  - MJExtension (2.5.14)
 
 DEPENDENCIES:
   - GreedDB (from `./`)
@@ -20,8 +18,7 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   FMDB: 96e8f1bcc1329e269330f99770ad4285d9003e52
-  GreedDB: 014a9180d17d75a5f4a72aa1c5a658c7bde41fc6
-  Masonry: ff105a956abcd19a618b2028b121cb638d7a8e2f
-  MJExtension: 5ab633484e431f777387c70b676c80f993361f1b
+  GreedDB: e4405ba674036f5cc76f9bbd5130b80f42aa2a4a
+  MJExtension: fb8e6e900fb44c9a7be435ba3d72b7fdf5f0994c
 
 COCOAPODS: 0.39.0

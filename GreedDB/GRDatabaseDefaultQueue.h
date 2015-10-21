@@ -15,69 +15,99 @@
 @interface GRDatabaseDefaultQueue : GRDatabaseBaseQueue
 
 /**
- *  whether value is blob. default NO
+ *  whether value is NSData. default NO
  */
 @property(nonatomic,assign)BOOL blobValue;
 
 #pragma mark - save
+
 /**
  *  save model
  *
- *  if delFirst is YES call delByKey:filter: first
- *  if delFirst is NO save direct
+ *  first call delByKey:filter:
+ *  then call saveWithModel:
  *
  *  @param model    model
- *  @param delFirst whether delete first
  *
  *  @return whether success
  */
-- (BOOL)saveWithModel:(GRDatabaseDefaultModel*)model delFirst:(BOOL)delFirst;
+- (BOOL)delByFilterAndSaveWithModel:(GRDatabaseDefaultModel*)model;
+
 /**
- *  save direct
+ *  save model
+ *
+ *  first call delByKey:
+ *  then call saveWithModel:
+ *
+ *  @param model    model
+ *
+ *  @return whether success
+ */
+- (BOOL)delAndSaveWithModel:(GRDatabaseDefaultModel*)model;
+
+/**
+ *  save model
  */
 - (BOOL)saveWithModel:(GRDatabaseDefaultModel*)model;
 
 /**
  * sort: YES - ascend , NO - descend
  * filter: if nil get the value of filter is null
+ * limit: if limit = 0 do not limit
  */
 #pragma mark - sort - filter
 
-- (NSMutableArray*)getValuesByKey:(NSString*)key filter:(NSString*)filter sort:(BOOL)sort;
-- (NSMutableArray*)getKeysByFilter:(NSString*)filter sort:(BOOL)sort;
-- (NSString*)getFirstKeyByFilter:(NSString*)filter;
-- (NSString*)getLastKeyByFilter:(NSString*)filter;
+- (NSMutableArray*)getValuesByKey:(id)key filter:(id)filter sort:(BOOL)sort limit:(NSUInteger)limit;
+- (NSMutableArray*)getValuesByKey:(id)key filter:(id)filter sort:(BOOL)sort;
+
+- (NSMutableArray*)getKeysByFilter:(id)filter sort:(BOOL)sort limit:(NSUInteger)limit;
+- (NSMutableArray*)getKeysByFilter:(id)filter sort:(BOOL)sort;
+
+- (id)getFirstKeyByFilter:(id)filter;
+- (id)getLastKeyByFilter:(id)filter;
 
 /**
  * sort: YES - ascend , NO - descend
  * filter: no filter
+ * limit: if limit = 0 do not limit
  */
 #pragma mark - sort  - no filter
 
-- (NSMutableArray*)getValuesByKey:(NSString*)key sort:(BOOL)sort;
-- (NSString*)getFirstKey;
-- (NSString*)getLastKey;
+- (NSMutableArray*)getValuesByKey:(id)key sort:(BOOL)sort limit:(NSUInteger)limit;
+- (NSMutableArray*)getValuesByKey:(id)key sort:(BOOL)sort;
+
+- (NSMutableArray*)getKeysBySort:(BOOL)sort limit:(NSUInteger)limit;
+- (NSMutableArray*)getKeysBySort:(BOOL)sort;
+
+- (id)getFirstKey;
+- (id)getLastKey;
 
 /**
  * sort: no sort
  * filter: if nil get the value of filter is null
+ * limit: if limit = 0 do not limit
  */
 #pragma mark - no sort - filter
 
-- (NSMutableArray*)getValuesByKey:(NSString*)key filter:(NSString*)filter;
-- (id)getValueByKey:(NSString*)key filter:(NSString*)filter;
-- (BOOL)updateValue:(id)value byKey:(NSString*)key filter:(NSString*)filter;
-- (BOOL)delByKey:(NSString*)key filter:(NSString*)filter;
+- (NSMutableArray*)getValuesByKey:(id)key filter:(id)filter limit:(NSUInteger)limit;
+- (NSMutableArray*)getValuesByKey:(id)key filter:(id)filter;
+
+- (id)getValueByKey:(id)key filter:(id)filter;
+- (BOOL)updateValue:(id)value byKey:(id)key filter:(id)filter;
+- (BOOL)delByKey:(id)key filter:(id)filter;
 
 /**
  * sort: no sort
  * filter: no filter
+ * limit: if limit = 0 do not limit
  */
 #pragma mark - no sort - no filter
 
-- (NSMutableArray*)getValuesByKey:(NSString*)key;
-- (id)getValueByKey:(NSString*)key;
-- (BOOL)updateValue:(id)value byKey:(NSString*)key;
-- (BOOL)delByKey:(NSString*)key;
+- (NSMutableArray*)getValuesByKey:(id)key limit:(NSUInteger)limit;
+- (NSMutableArray*)getValuesByKey:(id)key;
+
+- (id)getValueByKey:(id)key;
+- (BOOL)updateValue:(id)value byKey:(id)key;
+- (BOOL)delByKey:(id)key;
 
 @end

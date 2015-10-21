@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "GreedDB"
-  s.version      = "0.0.1"
+  s.version      = "0.0.2"
   s.summary      = "convenient storage for ios"
 
   # This description is used to generate tags and improve search results.
@@ -25,7 +25,7 @@ Pod::Spec.new do |s|
   #   * Write the description between the DESC delimiters below.
   #   * Finally, don't worry about the indent, CocoaPods strips it!
   s.description  = %{
-    this is used for storaging in ios. based on FMDB . can save json string ,blob and other info directly }
+    this is used for storage in ios. based on FMDB and MJExtension. can save NSDictionary,NSArray,NSData,NSString,NSNumber or NSObject to database directly}
 
   s.homepage     = "https://github.com/greedlab/GreedDB"
   # s.screenshots  = "www.example.com/screenshots_1.gif", "www.example.com/screenshots_2.gif"
