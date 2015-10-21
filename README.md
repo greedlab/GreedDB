@@ -1,5 +1,5 @@
 # GreedDB
-this is used for storage in ios. based on [FMDB](https://github.com/ccgus/fmdb) and [MJExtension](https://github.com/CoderMJLee/MJExtension). can save json string ,blob and other info direct
+this is a storage manager for ios. based on [FMDB](https://github.com/ccgus/fmdb) and [MJExtension](https://github.com/CoderMJLee/MJExtension). can manager NSDictionary,NSArray,NSData,NSString,NSNumber or NSObject  directly
 # Installation
 pod 'GreedDB'
 # usage
