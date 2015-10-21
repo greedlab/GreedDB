@@ -2,7 +2,7 @@
 this is a storage manager for ios. based on [FMDB](https://github.com/ccgus/fmdb) and [MJExtension](https://github.com/CoderMJLee/MJExtension). can save NSDictionary,NSArray,NSData,NSString,NSNumber or NSObject  directly
 # Installation
 pod 'GreedDB'
-# usage
+# Usage
 ## [GRDatabaseDefaultQueue](https://github.com/greedlab/GreedDB/blob/master/GreedDB/GRDatabaseDefaultQueue.h)
 storage for the model [GRDatabaseDefaultModel](https://github.com/greedlab/GreedDB/blob/master/GreedDB/GRDatabaseDefaultModel.h)
 ``` objc

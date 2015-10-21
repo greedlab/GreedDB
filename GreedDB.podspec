@@ -25,7 +25,7 @@ Pod::Spec.new do |s|
   #   * Write the description between the DESC delimiters below.
   #   * Finally, don't worry about the indent, CocoaPods strips it!
   s.description  = %{
-    this is a storage manager for ios. based on FMDB and MJExtension. can manager NSDictionary,NSArray,NSData,NSString,NSNumber or NSObject  directly }
+    this is a storage manager for ios. based on FMDB and MJExtension. can save NSDictionary,NSArray,NSData,NSString,NSNumber or NSObject  directly }
 
   s.homepage     = "https://github.com/greedlab/GreedDB"
   # s.screenshots  = "www.example.com/screenshots_1.gif", "www.example.com/screenshots_2.gif"
