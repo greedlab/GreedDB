@@ -1,5 +1,5 @@
 # GreedDB
-this is used for storage in ios. based on [FMDB](https://github.com/ccgus/fmdb) . can save json string ,blob and other info direct
+this is used for storage in ios. based on [FMDB](https://github.com/ccgus/fmdb) and [MJExtension](https://github.com/CoderMJLee/MJExtension). can save json string ,blob and other info direct
 # Installation
 pod 'GreedDB'
 # usage
