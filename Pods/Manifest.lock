@@ -4,7 +4,7 @@ PODS:
   - FMDB/common (2.5)
   - FMDB/standard (2.5):
     - FMDB/common
-  - GreedDB (0.0.1):
+  - GreedDB (0.0.2):
     - FMDB
     - MJExtension
   - MJExtension (2.5.14)
@@ -18,7 +18,7 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   FMDB: 96e8f1bcc1329e269330f99770ad4285d9003e52
-  GreedDB: e4405ba674036f5cc76f9bbd5130b80f42aa2a4a
+  GreedDB: 655aeed15e0e7cfe146a75c48446301895fe07d3
   MJExtension: fb8e6e900fb44c9a7be435ba3d72b7fdf5f0994c
 
 COCOAPODS: 0.39.0

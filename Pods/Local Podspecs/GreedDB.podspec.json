@@ -1,8 +1,8 @@
 {
   "name": "GreedDB",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "summary": "convenient storage for ios",
-  "description": "this is used for storaging in ios. based on FMDB . can save json string ,blob and other info directly",
+  "description": "this is a storage manager for ios. based on FMDB and MJExtension. can save NSDictionary,NSArray,NSData,NSString,NSNumber or NSObject  directly",
   "homepage": "https://github.com/greedlab/GreedDB",
   "license": "MIT",
   "authors": {
@@ -13,7 +13,7 @@
   },
   "source": {
     "git": "https://github.com/greedlab/GreedDB.git",
-    "tag": "0.0.1"
+    "tag": "0.0.2"
   },
   "source_files": [
     "GreedDB",
