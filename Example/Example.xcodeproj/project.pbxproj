@@ -7,20 +7,34 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		282165321BDDCB72000B6B04 /* ExampleUnitTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 282165311BDDCB72000B6B04 /* ExampleUnitTests.m */; };
 		28771EC81BD0D692008ADAE9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 28771EC71BD0D692008ADAE9 /* main.m */; };
 		28771ECB1BD0D692008ADAE9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 28771ECA1BD0D692008ADAE9 /* AppDelegate.m */; };
 		28771ED31BD0D692008ADAE9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 28771ED21BD0D692008ADAE9 /* Assets.xcassets */; };
 		28771ED61BD0D692008ADAE9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 28771ED41BD0D692008ADAE9 /* LaunchScreen.storyboard */; };
-		28771EEA1BD0DA06008ADAE9 /* GRTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28771EE91BD0DA06008ADAE9 /* GRTestViewController.m */; settings = {ASSET_TAGS = (); }; };
-		28771EF31BD10484008ADAE9 /* GRTestDefaultModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 28771EF21BD10484008ADAE9 /* GRTestDefaultModel.m */; settings = {ASSET_TAGS = (); }; };
-		28771EF91BD61900008ADAE9 /* GRTestMultFilterModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 28771EF81BD61900008ADAE9 /* GRTestMultFilterModel.m */; settings = {ASSET_TAGS = (); }; };
-		28771EFC1BD63AF7008ADAE9 /* GreedDB.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 28771EFA1BD63AF7008ADAE9 /* GreedDB.podspec */; settings = {ASSET_TAGS = (); }; };
-		28771EFD1BD63AF7008ADAE9 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 28771EFB1BD63AF7008ADAE9 /* README.md */; settings = {ASSET_TAGS = (); }; };
+		28771EEA1BD0DA06008ADAE9 /* GRTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28771EE91BD0DA06008ADAE9 /* GRTestViewController.m */; };
+		28771EF31BD10484008ADAE9 /* GRTestDefaultModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 28771EF21BD10484008ADAE9 /* GRTestDefaultModel.m */; };
+		28771EF91BD61900008ADAE9 /* GRTestMultFilterModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 28771EF81BD61900008ADAE9 /* GRTestMultFilterModel.m */; };
+		28771EFC1BD63AF7008ADAE9 /* GreedDB.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 28771EFA1BD63AF7008ADAE9 /* GreedDB.podspec */; };
+		358FB518619D07F97A9C9262 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CDBB88DEB27BC1936C90D630 /* libPods.a */; };
 		5A7B41FD28CE3A0EABB9A2E5 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CDBB88DEB27BC1936C90D630 /* libPods.a */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		282165341BDDCB72000B6B04 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 28771EBB1BD0D692008ADAE9 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 28771EC21BD0D692008ADAE9;
+			remoteInfo = Example;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		1A549D34940E9D0B1F58B2ED /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "../Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		2821652F1BDDCB72000B6B04 /* ExampleUnitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ExampleUnitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		282165311BDDCB72000B6B04 /* ExampleUnitTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ExampleUnitTests.m; sourceTree = "<group>"; };
+		282165331BDDCB72000B6B04 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		28771EC31BD0D692008ADAE9 /* Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		28771EC71BD0D692008ADAE9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		28771EC91BD0D692008ADAE9 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -35,12 +49,19 @@
 		28771EF71BD61900008ADAE9 /* GRTestMultFilterModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GRTestMultFilterModel.h; sourceTree = "<group>"; };
 		28771EF81BD61900008ADAE9 /* GRTestMultFilterModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GRTestMultFilterModel.m; sourceTree = "<group>"; };
 		28771EFA1BD63AF7008ADAE9 /* GreedDB.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = GreedDB.podspec; path = ../GreedDB.podspec; sourceTree = "<group>"; };
-		28771EFB1BD63AF7008ADAE9 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		6F8BD2A14159D0FF13E82171 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "../Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		CDBB88DEB27BC1936C90D630 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		2821652C1BDDCB72000B6B04 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				358FB518619D07F97A9C9262 /* libPods.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		28771EC01BD0D692008ADAE9 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -52,12 +73,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		282165301BDDCB72000B6B04 /* ExampleUnitTests */ = {
+			isa = PBXGroup;
+			children = (
+				282165311BDDCB72000B6B04 /* ExampleUnitTests.m */,
+				282165331BDDCB72000B6B04 /* Info.plist */,
+			);
+			path = ExampleUnitTests;
+			sourceTree = "<group>";
+		};
 		28771EBA1BD0D692008ADAE9 = {
 			isa = PBXGroup;
 			children = (
 				28771EFA1BD63AF7008ADAE9 /* GreedDB.podspec */,
-				28771EFB1BD63AF7008ADAE9 /* README.md */,
 				28771EC51BD0D692008ADAE9 /* Example */,
+				282165301BDDCB72000B6B04 /* ExampleUnitTests */,
 				28771EC41BD0D692008ADAE9 /* Products */,
 				DCF405F004B39D26BD794A77 /* Pods */,
 				39C2C5A434FD71489D6F0472 /* Frameworks */,
@@ -68,6 +98,7 @@
 			isa = PBXGroup;
 			children = (
 				28771EC31BD0D692008ADAE9 /* Example.app */,
+				2821652F1BDDCB72000B6B04 /* ExampleUnitTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -119,6 +150,27 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		2821652E1BDDCB72000B6B04 /* ExampleUnitTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 282165361BDDCB72000B6B04 /* Build configuration list for PBXNativeTarget "ExampleUnitTests" */;
+			buildPhases = (
+				79E11CBE59A77F8956FECB89 /* Check Pods Manifest.lock */,
+				2821652B1BDDCB72000B6B04 /* Sources */,
+				2821652C1BDDCB72000B6B04 /* Frameworks */,
+				2821652D1BDDCB72000B6B04 /* Resources */,
+				275165E9C433FE5A34FB2FF4 /* Embed Pods Frameworks */,
+				2E1B4B46C58E431192DC146D /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				282165351BDDCB72000B6B04 /* PBXTargetDependency */,
+			);
+			name = ExampleUnitTests;
+			productName = ExampleUnitTests;
+			productReference = 2821652F1BDDCB72000B6B04 /* ExampleUnitTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		28771EC21BD0D692008ADAE9 /* Example */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 28771EDA1BD0D692008ADAE9 /* Build configuration list for PBXNativeTarget "Example" */;
@@ -149,6 +201,10 @@
 				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = GreedLab;
 				TargetAttributes = {
+					2821652E1BDDCB72000B6B04 = {
+						CreatedOnToolsVersion = 7.1;
+						TestTargetID = 28771EC21BD0D692008ADAE9;
+					};
 					28771EC21BD0D692008ADAE9 = {
 						CreatedOnToolsVersion = 7.0.1;
 					};
@@ -168,11 +224,19 @@
 			projectRoot = "";
 			targets = (
 				28771EC21BD0D692008ADAE9 /* Example */,
+				2821652E1BDDCB72000B6B04 /* ExampleUnitTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		2821652D1BDDCB72000B6B04 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		28771EC11BD0D692008ADAE9 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -186,6 +250,51 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		275165E9C433FE5A34FB2FF4 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/../Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2E1B4B46C58E431192DC146D /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/../Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		79E11CBE59A77F8956FECB89 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
 		91208F52BD1849E76DDF7AAA /* Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -234,11 +343,18 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		2821652B1BDDCB72000B6B04 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				282165321BDDCB72000B6B04 /* ExampleUnitTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		28771EBF1BD0D692008ADAE9 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				28771EFD1BD63AF7008ADAE9 /* README.md in Sources */,
 				28771EF31BD10484008ADAE9 /* GRTestDefaultModel.m in Sources */,
 				28771EEA1BD0DA06008ADAE9 /* GRTestViewController.m in Sources */,
 				28771ECB1BD0D692008ADAE9 /* AppDelegate.m in Sources */,
@@ -248,6 +364,14 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		282165351BDDCB72000B6B04 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 28771EC21BD0D692008ADAE9 /* Example */;
+			targetProxy = 282165341BDDCB72000B6B04 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		28771ED41BD0D692008ADAE9 /* LaunchScreen.storyboard */ = {
@@ -261,6 +385,34 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		282165371BDDCB72000B6B04 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6F8BD2A14159D0FF13E82171 /* Pods.debug.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = ExampleUnitTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.greedlab.ExampleUnitTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Example.app/Example";
+			};
+			name = Debug;
+		};
+		282165381BDDCB72000B6B04 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1A549D34940E9D0B1F58B2ED /* Pods.release.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = ExampleUnitTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.greedlab.ExampleUnitTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Example.app/Example";
+			};
+			name = Release;
+		};
 		28771ED81BD0D692008ADAE9 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -370,6 +522,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		282165361BDDCB72000B6B04 /* Build configuration list for PBXNativeTarget "ExampleUnitTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				282165371BDDCB72000B6B04 /* Debug */,
+				282165381BDDCB72000B6B04 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		28771EBE1BD0D692008ADAE9 /* Build configuration list for PBXProject "Example" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

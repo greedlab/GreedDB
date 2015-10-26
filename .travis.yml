@@ -1,4 +1,3 @@
 language: objective-c
-osx_image: xcode7
 xcode_workspace: GreedDB.xcworkspace
-xcode_scheme: GreedDB
+xcode_scheme: Example 
