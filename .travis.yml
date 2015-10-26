@@ -6,5 +6,5 @@ before_install:
 # - pod install
 # - xcodebuild -list
 script:
- - xctool -workspace 'GreedDB.xcworkspace' -scheme ‘Example’ -configuration Debug -sdk iphonesimulator clean build test ARCHS=i386 VALID_ARCHS=i386 ONLY_ACTIVE_ARCH=NO 
+ - xctool -workspace 'GreedDB.xcworkspace' -scheme Example -configuration Debug -sdk iphonesimulator clean build test ARCHS=i386 VALID_ARCHS=i386 ONLY_ACTIVE_ARCH=NO 
 # - xcodebuild -sdk iphonesimulator -configuration Debug -workspace GreedDB.xcworkspace -scheme Example ONLY_ACTIVE_ARCH=NO 
