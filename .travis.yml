@@ -1,8 +1,10 @@
 language: objective-c
 before_install:
  - export LANG=en_US.UTF-8
- - brew upgrade xctool
+# - brew upgrade xctool
  - gem install cocoapods
  - pod install
+ - xcodebuild -list
 script:
- - xctool -workspace 'GreedDB.xcworkspace' -scheme ‘Example’ -configuration Debug -sdk iphonesimulator clean build test ARCHS=i386 VALID_ARCHS=i386 ONLY_ACTIVE_ARCH=NO 
+# - xctool -workspace 'GreedDB.xcworkspace' -scheme ‘Example’ -configuration Debug -sdk iphonesimulator clean build test ARCHS=i386 VALID_ARCHS=i386 ONLY_ACTIVE_ARCH=NO 
+ - xcodebuild -sdk iphonesimulator -configuration Debug -workspace GreedDB.xcworkspace -scheme Example ONLY_ACTIVE_ARCH=NO 
