@@ -1,3 +1,4 @@
 language: objective-c
-xcode_workspace: GreedDB.xcworkspace
+#xcode_workspace: GreedDB.xcworkspace
+xcode_project: Example/Example.xcodeproj
 xcode_scheme: Example 
