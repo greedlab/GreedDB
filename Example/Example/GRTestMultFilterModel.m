@@ -7,10 +7,14 @@
 //
 
 #import "GRTestMultFilterModel.h"
-#import "NSObject+GreedDB.h"
-
+#import "GreedJSON.h"
 
 @implementation GRTestMultFilterModel
+
++ (BOOL)gr_useNullProperty
+{
+    return YES;
+}
 
 + (NSString*)valueName
 {
@@ -19,7 +23,7 @@
 
 + (NSArray*)filterNames
 {
-    NSMutableArray *array = [self gr_properties];
+    NSMutableArray *array = [[self gr_propertyNames] mutableCopy];
     NSString *valueName = [self valueName];
     if (valueName) {
         [array removeObject:valueName];

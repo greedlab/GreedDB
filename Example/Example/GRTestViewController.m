@@ -10,8 +10,6 @@
 #import "GRTestDefaultModel.h"
 #import "GRTestMultFilterModel.h"
 
-#import <MJExtension/MJExtension.h>
-
 @interface GRTestViewController ()
 
 @end
@@ -23,6 +21,7 @@
     // Do any additional setup after loading the view.
     self.view.backgroundColor = [UIColor whiteColor];
     [self testDefault];
+    [self testMultFilter];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -112,7 +111,7 @@
     model.filter1 = @"filter1";
     model.filter4 = @"filter4";
     
-    [_multFilterQueue saveWithValueFiltersDictionary:[model gr_keyValues]];
+    [_multFilterQueue saveWithValueFiltersDictionary:[model gr_dictionary]];
 }
 
 - (void)getMultFilter
@@ -120,8 +119,7 @@
     GRTestMultFilterModel *model = [[GRTestMultFilterModel alloc] init];
     model.filter1 = @"filter1";
     model.filter4 = @"filter4";
-    
-    NSArray *array = [_multFilterQueue getValuesByFiltersDictionary:[model keyValues]];
+    NSArray *array = [_multFilterQueue getValuesByFiltersDictionary:[model gr_noNUllDictionary]];
     NSLog(@"%@",array);
 }
 
@@ -131,7 +129,7 @@
     model.filter1 = @"filter1";
     model.filter4 = @"filter4";
     
-    [_multFilterQueue delByValueFiltersDictionary:[model keyValues]];
+    [_multFilterQueue delByValueFiltersDictionary:[model gr_noNUllDictionary]];
 }
 
 @end

@@ -7,73 +7,49 @@
 //
 
 #import "NSObject+GreedDB.h"
+#import "GreedJSON.h"
 
 @implementation NSObject (GreedDB)
 
 #pragma mark - public
 
-+ (id)EntityWithJsonString:(NSString*)jsonString
++ (id)ModelWithJsonString:(NSString*)jsonString
 {
-    return [[self class] objectWithKeyValues:jsonString];
+    NSDictionary *dictionary = [jsonString gr_object];
+    return [[self class] gr_objectFromDictionary:dictionary];
 }
 
-- (NSMutableDictionary *)gr_keyValues
-{
-    NSMutableDictionary *keyValues = [self keyValues];
-    
-    Class aClass = [self class];
-    NSArray *allowedPropertyNames = [aClass totalAllowedPropertyNames];
-    NSArray *ignoredPropertyNames = [aClass totalIgnoredPropertyNames];
-    
-    [aClass enumerateProperties:^(MJProperty *property, BOOL *stop) {
-        if (allowedPropertyNames.count && ![allowedPropertyNames containsObject:property.name]) return;
-        if ([ignoredPropertyNames containsObject:property.name]) return;
-        
-        id value = [property valueForObject:self];
-        if (!value) {
-            [keyValues setObject:[NSNull null] forKey:property.name];
-        }
-    }];
-    return keyValues;
-}
-
-- (NSString *)gr_JSONString
+- (NSString *)gr_autoJSONString
 {
     if (self) {
         if ([self isKindOfClass:[NSString class]]) {
             return (NSString*)self;
-        } else if ([self isKindOfClass:[NSDictionary class]]
-                   || [self isKindOfClass:[NSArray class]]
-                   || [self isKindOfClass:[NSData class]]) {
-            return [self JSONString];
+        } else if ([self isKindOfClass:[NSDictionary class]]) {
+            return [(NSDictionary*)self gr_JSONString];
+        } else if ([self isKindOfClass:[NSArray class]]) {
+            return [(NSArray*)self gr_JSONString];
+        } else if ([self isKindOfClass:[NSData class]]) {
+            return [[NSString alloc] initWithData:(NSData*)self encoding:NSUTF8StringEncoding];
         } else if ([self isKindOfClass:[NSNumber class]]) {
             return [(NSNumber*)self stringValue];
         } else {
-            NSDictionary *dictionary = [self keyValues];
-            return [dictionary JSONString];
+            NSDictionary *dictionary = [self gr_dictionary];
+            return [dictionary gr_JSONString];
         }
     } else {
         return nil;
     }
 }
 
-- (NSMutableArray *)gr_properties
+- (NSMutableDictionary*)gr_noNUllDictionary
 {
-    Class aClass = [self class];
-    NSMutableArray *allowedPropertyNames = [aClass totalAllowedPropertyNames];
-    if (allowedPropertyNames.count) {
-        return allowedPropertyNames;
-    };
-    
-    NSMutableArray *properties = [[NSMutableArray alloc] init];
-    NSMutableArray *ignoredPropertyNames = [aClass totalIgnoredPropertyNames];
-    
-    [aClass enumerateProperties:^(MJProperty *property, BOOL *stop) {
-        if (![ignoredPropertyNames containsObject:property.name]) {
-            [properties addObject:property.name];
-        };
+    NSMutableDictionary *dictionary = [self gr_dictionary];
+    [dictionary enumerateKeysAndObjectsUsingBlock:^(id  _Nonnull key, id  _Nonnull obj, BOOL * _Nonnull stop) {
+        if (obj == [NSNull null]) {
+            [dictionary removeObjectForKey:key];
+        }
     }];
-    return properties;
+    return dictionary;
 }
 
 @end

@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '36EA9AD7748366FA9A44231B'
+               BlueprintIdentifier = 'CF3D151618C51A8968F9A5EF'
                BlueprintName = 'GreedDB'
                ReferencedContainer = 'container:Pods.xcodeproj'
                BuildableName = 'libGreedDB.a'>

@@ -314,7 +314,7 @@
         [sql appendString:@" AND"];
         [sql appendString: filter ? [NSString stringWithFormat:@" filter = \"%@\"",filter] : @" filter ISNULL"];
         
-        result = [db executeUpdate:sql,[value gr_JSONString]];
+        result = [db executeUpdate:sql,[value gr_autoJSONString]];
         if (!result) {
             NSLog(@"error to run %@",sql);
         }

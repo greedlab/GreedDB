@@ -1,11 +1,11 @@
 Pod::Spec.new do |s|
 
   s.name         = "GreedDB"
-  s.version      = "0.0.2"
+  s.version      = "0.0.3"
   s.summary      = "convenient storage for ios"
 
   s.description  = %{
-    this is a storage manager for ios. based on FMDB and MJExtension. can save NSDictionary,NSArray,NSData,NSString,NSNumber or NSObject  directly }
+    this is a storage manager for ios. based on FMDB and GreedJSON. can save NSDictionary,NSArray,NSData,NSString,NSNumber or NSObject  directly }
 
   s.homepage     = "https://github.com/greedlab/GreedDB"
 
@@ -24,6 +24,6 @@ Pod::Spec.new do |s|
    s.requires_arc = true
 
    s.dependency "FMDB"
-   s.dependency "MJExtension"
+   s.dependency "GreedJSON"
 
 end
