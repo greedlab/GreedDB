@@ -1,6 +1,6 @@
 # GreedDB [![Join the chat at https://gitter.im/greedlab/GreedDB](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/greedlab/GreedDB?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge) [![Build Status](https://travis-ci.org/greedlab/GreedDB.svg?branch=master)](https://travis-ci.org/greedlab/GreedDB) 
 
- A storage for ios. based on [FMDB](https://github.com/ccgus/fmdb) and [MJExtension](https://github.com/CoderMJLee/MJExtension). can save NSDictionary,NSArray,NSData,NSString,NSNumber or NSObject  directly
+ A storage for ios. based on [FMDB](https://github.com/ccgus/fmdb) and [GreedJSON](https://github.com/greedlab/GreedJSON). can save NSDictionary,NSArray,NSData,NSString,NSNumber or NSObject  directly
 # Installation
 pod 'GreedDB'
 # Usage
