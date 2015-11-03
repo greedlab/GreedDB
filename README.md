@@ -72,7 +72,7 @@ used for getting value from mult filters. eg :search with more keys
     model.filter1 = @"filter1";
     model.filter4 = @"filter4";
     
-    [_multFilterQueue saveWithValueFiltersDictionary:[model gr_keyValues]];
+    [_multFilterQueue saveWithValueFiltersDictionary:[model gr_dictionary]];
 }
 
 - (void)getMultFilter
@@ -80,8 +80,7 @@ used for getting value from mult filters. eg :search with more keys
     GRTestMultFilterModel *model = [[GRTestMultFilterModel alloc] init];
     model.filter1 = @"filter1";
     model.filter4 = @"filter4";
-    
-    NSArray *array = [_multFilterQueue getValuesByFiltersDictionary:[model keyValues]];
+    NSArray *array = [_multFilterQueue getValuesByFiltersDictionary:[model gr_noNUllDictionary]];
     NSLog(@"%@",array);
 }
 
@@ -91,12 +90,13 @@ used for getting value from mult filters. eg :search with more keys
     model.filter1 = @"filter1";
     model.filter4 = @"filter4";
     
-    [_multFilterQueue delByValueFiltersDictionary:[model keyValues]];
+    [_multFilterQueue delByValueFiltersDictionary:[model gr_noNUllDictionary]];
 }
 ```
 # Release Notes
 * 0.0.1 first version
 * 0.0.2 add limit to GRDatabaseDefaultQueue
-
+* 0.0.3 replace MJExtension with GreedJSON
+* 
 # LICENSE
 MIT
