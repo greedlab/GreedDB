@@ -12,19 +12,31 @@
 
 #pragma mark - property getter
 
+/**
+ *  the property names only in this class
+ */
 - (NSArray*)gr_propertyNames;
+
+/**
+ *  the property names in this class and all super classes
+ */
+- (NSMutableArray*)gr_allPropertyNames;
+
+- (NSMutableArray*)gr_allIgnoredPropertyNames;
+- (NSMutableDictionary*)gr_allReplacedPropertyNames;
+- (NSMutableDictionary*)gr_allClassInArray;
 
 #pragma mark - Property init
 
 /**
+ *  whether use [NSNull null] to replace nil
  *  default NO
  *
- *  @return whether use [NSNull null] to replace nil
+ *  @return BOOL
  */
 + (BOOL)gr_useNullProperty;
 
 + (NSArray*)gr_ignoredPropertyNames;
-+ (NSArray*)gr_allowedPropertyNames;
 
 /**
  *  @{propertyName:dictionaryKey}

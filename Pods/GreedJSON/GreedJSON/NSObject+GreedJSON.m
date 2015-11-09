@@ -19,6 +19,26 @@
     return [GRJSONHelper propertyNames:[self class]];
 }
 
+- (NSMutableArray*)gr_allPropertyNames
+{
+    return [GRJSONHelper allPropertyNames:[self class]];
+}
+
+- (NSMutableArray*)gr_allIgnoredPropertyNames
+{
+    return [GRJSONHelper allIgnoredPropertyNames:[self class]];
+}
+
+- (NSMutableDictionary*)gr_allReplacedPropertyNames
+{
+    return [GRJSONHelper allReplacedPropertyNames:[self class]];
+}
+
+- (NSMutableDictionary*)gr_allClassInArray
+{
+    return [GRJSONHelper allClassInArray:[self class]];
+}
+
 #pragma mark - Property init
 
 + (BOOL)gr_useNullProperty
@@ -32,16 +52,6 @@
     Class superClass = class_getSuperclass([self class]);
     if (superClass && superClass != [NSObject class]) {
         array = [superClass gr_ignoredPropertyNames];
-    }
-    return array;
-}
-
-+ (NSArray*)gr_allowedPropertyNames
-{
-    NSArray *array = nil;
-    Class superClass = class_getSuperclass([self class]);
-    if (superClass && superClass != [NSObject class]) {
-        array = [superClass gr_allowedPropertyNames];
     }
     return array;
 }
@@ -78,16 +88,12 @@
 - (instancetype)gr_setDictionary:(NSDictionary*)dictionary
 {
     Class aClass = [self class];
-    NSArray *allowedPropertyNames = [aClass gr_allowedPropertyNames];
-    NSArray *ignoredPropertyNames = [aClass gr_ignoredPropertyNames];
-    NSDictionary *replacedPropertyNames = [aClass gr_replacedPropertyNames];
+    NSArray *ignoredPropertyNames = [self gr_allIgnoredPropertyNames];
+    NSDictionary *replacedPropertyNames = [self gr_allReplacedPropertyNames];
     
-    NSArray *propertyNames = [GRJSONHelper propertyNames:aClass];
+    NSArray *propertyNames = [GRJSONHelper allPropertyNames:aClass];
     [propertyNames enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
         NSString *key = (NSString *)obj;
-        if (allowedPropertyNames && ![allowedPropertyNames containsObject:key]) {
-            return ;
-        }
         if (ignoredPropertyNames && [ignoredPropertyNames containsObject:key]) {
             return;
         }
@@ -117,7 +123,7 @@
             NSMutableArray *childObjects = [NSMutableArray arrayWithCapacity:[(NSArray*)value count]];
             [value enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
                 if ([[obj class] isSubclassOfClass:[NSDictionary class]]) {
-                    Class arrayItemClass = [[aClass gr_classInArray] objectForKey:key];
+                    Class arrayItemClass = [[self gr_allClassInArray] objectForKey:key];
                     if (!arrayItemClass || arrayItemClass == [NSDictionary class]) {
                         [childObjects addObject:obj];
                     } else {
@@ -150,18 +156,14 @@
     }
     
     Class aClass = [self class];
-    NSArray *allowedPropertyNames = [aClass gr_allowedPropertyNames];
-    NSArray *ignoredPropertyNames = [aClass gr_ignoredPropertyNames];
-    NSDictionary *replacedPropertyNames = [aClass gr_replacedPropertyNames];
+    NSArray *ignoredPropertyNames = [self gr_allIgnoredPropertyNames];
+    NSDictionary *replacedPropertyNames = [self gr_allReplacedPropertyNames];
     
     NSMutableDictionary *dic = [NSMutableDictionary dictionary];
-    NSArray *propertyNames = [GRJSONHelper propertyNames:[self class]];
+    NSArray *propertyNames = [GRJSONHelper allPropertyNames:[self class]];
     
     [propertyNames enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
         NSString *key = (NSString*)obj;
-        if (allowedPropertyNames && ![allowedPropertyNames containsObject:obj]) {
-            return ;
-        }
         if (ignoredPropertyNames && [ignoredPropertyNames containsObject:obj]) {
             return;
         }
@@ -195,5 +197,7 @@
     
     return dic;
 }
+
+#pragma mark - private
 
 @end

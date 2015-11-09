@@ -4,10 +4,10 @@ PODS:
   - FMDB/common (2.5)
   - FMDB/standard (2.5):
     - FMDB/common
-  - GreedDB (0.0.2):
+  - GreedDB (0.0.3):
     - FMDB
     - GreedJSON
-  - GreedJSON (0.0.7)
+  - GreedJSON (0.0.8)
 
 DEPENDENCIES:
   - GreedDB (from `./`)
@@ -18,7 +18,7 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   FMDB: 96e8f1bcc1329e269330f99770ad4285d9003e52
-  GreedDB: 4b1cb1cae1fa69058198bb954d5fa74b17953f22
-  GreedJSON: 31ddb0e46f6f553540d4b12839745a976b4cece5
+  GreedDB: df4f242bc9ad43747e84790ad901e37cc7198671
+  GreedJSON: 1c5ee1f49ef3fc3a564031f7c7ca6a7b4b0ed2ba
 
 COCOAPODS: 0.39.0

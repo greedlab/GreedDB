@@ -41,21 +41,21 @@
                 NSLog(@"error to run %@",sql);
             } else {
                 {
-                    NSString *sql = [NSString stringWithFormat:@"CREATE INDEX key_index ON %@ (key)",self.tableName];
+                    NSString *sql = [NSString stringWithFormat:@"CREATE INDEX %@_index_key ON %@ (key)",self.tableName,self.tableName];
                     result = [db executeUpdate:sql];
                     if (!result) {
                         NSLog(@"error to run %@",sql);
                     }
                 }
                 {
-                    NSString *sql = [NSString stringWithFormat:@"CREATE INDEX filter_index ON %@ (filter)",self.tableName];
+                    NSString *sql = [NSString stringWithFormat:@"CREATE INDEX %@_index_filter ON %@ (filter)",self.tableName,self.tableName];
                     result = [db executeUpdate:sql];
                     if (!result) {
                         NSLog(@"error to run %@",sql);
                     }
                 }
                 {
-                    NSString *sql = [NSString stringWithFormat:@"CREATE INDEX sort_index ON %@ (sort)",self.tableName];
+                    NSString *sql = [NSString stringWithFormat:@"CREATE INDEX %@_index_sort ON %@ (sort)",self.tableName,self.tableName];
                     result = [db executeUpdate:sql];
                     if (!result) {
                         NSLog(@"error to run %@",sql);
