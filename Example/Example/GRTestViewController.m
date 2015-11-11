@@ -45,6 +45,10 @@
     NSLog(@"%@",_database.dbPath);
     
     [_database setTableName:@"testDefault"];
+    [_database setCreateFilterIndex:YES];
+    [_database setCreateKeyIndex:YES];
+    [_database setCreateSortIndex:YES];
+    
     [_database recreateTable];
 }
 

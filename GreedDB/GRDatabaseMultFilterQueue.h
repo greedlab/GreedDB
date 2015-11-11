@@ -16,6 +16,12 @@
 @property(nonatomic,strong)NSArray<NSString*> *filterNames;
 @property(nonatomic,strong)NSString *valueName;
 
+/**
+ *  create filter index when creating table. default NO
+ */
+@property(nonatomic,assign)BOOL createFilterIndex;
+
+
 - (BOOL)saveWithValueFiltersDictionary:(NSDictionary*)dictionary;
 
 - (NSMutableArray*)getValuesByFiltersDictionary:(NSDictionary*)dictionary;

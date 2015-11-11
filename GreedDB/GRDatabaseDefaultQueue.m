@@ -17,6 +17,7 @@
     self = [super init];
     if (self) {
         _blobValue = NO;
+        _createKeyIndex = NO;
         _tableName = @"defaultQueue";
     }
     return self;
@@ -40,21 +41,23 @@
             if (!result) {
                 NSLog(@"error to run %@",sql);
             } else {
-                {
+                if (_createKeyIndex) {
                     NSString *sql = [NSString stringWithFormat:@"CREATE INDEX %@_index_key ON %@ (key)",self.tableName,self.tableName];
                     result = [db executeUpdate:sql];
                     if (!result) {
                         NSLog(@"error to run %@",sql);
                     }
                 }
-                {
+                
+                if (_createFilterIndex) {
                     NSString *sql = [NSString stringWithFormat:@"CREATE INDEX %@_index_filter ON %@ (filter)",self.tableName,self.tableName];
                     result = [db executeUpdate:sql];
                     if (!result) {
                         NSLog(@"error to run %@",sql);
                     }
                 }
-                {
+                
+                if (_createSortIndex) {
                     NSString *sql = [NSString stringWithFormat:@"CREATE INDEX %@_index_sort ON %@ (sort)",self.tableName,self.tableName];
                     result = [db executeUpdate:sql];
                     if (!result) {

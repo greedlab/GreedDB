@@ -31,27 +31,28 @@
     __block BOOL result = YES;
     [self.queue inDatabase:^(FMDatabase *db){
         if (![db tableExists:self.tableName]) {
-            {
-                NSMutableString *sql = [[NSMutableString alloc] initWithFormat:@"CREATE TABLE %@",self.tableName];
-                
-                [sql appendFormat:@" (%@ TEXT,",self.valueName];
-                for (NSInteger index = 0; index < _filterNames.count; index++) {
-                    NSString *filter = [_filterNames objectAtIndex:index];
-                    [sql appendString: (index == _filterNames.count - 1) ? [NSString stringWithFormat:@" %@ TEXT)",filter] : [NSString stringWithFormat:@" %@ TEXT,",filter]];
-                }
-                result = [db executeUpdate:sql];
-                if (!result) {
-                    NSLog(@"error to run : %@",sql);
-                }
-            }
+            NSMutableString *sql = [[NSMutableString alloc] initWithFormat:@"CREATE TABLE %@",self.tableName];
+            
+            [sql appendFormat:@" (%@ TEXT,",self.valueName];
             for (NSInteger index = 0; index < _filterNames.count; index++) {
                 NSString *filter = [_filterNames objectAtIndex:index];
-                NSString *filterIndex = [NSString stringWithFormat:@"%@Index",filter];
-                {
-                    NSString *sql = [NSString stringWithFormat:@"CREATE INDEX %@ ON %@ (%@)",filterIndex,self.tableName,filter];
-                    result = [db executeUpdate:sql];
-                    if (!result) {
-                        NSLog(@"error to run : %@",sql);
+                [sql appendString: (index == _filterNames.count - 1) ? [NSString stringWithFormat:@" %@ TEXT)",filter] : [NSString stringWithFormat:@" %@ TEXT,",filter]];
+            }
+            result = [db executeUpdate:sql];
+            if (!result) {
+                NSLog(@"error to run : %@",sql);
+            } else {
+                if (_createFilterIndex) {
+                    for (NSInteger index = 0; index < _filterNames.count; index++) {
+                        NSString *filter = [_filterNames objectAtIndex:index];
+                        NSString *filterIndex = [NSString stringWithFormat:@"%@Index",filter];
+                        {
+                            NSString *sql = [NSString stringWithFormat:@"CREATE INDEX %@ ON %@ (%@)",filterIndex,self.tableName,filter];
+                            result = [db executeUpdate:sql];
+                            if (!result) {
+                                NSLog(@"error to run : %@",sql);
+                            }
+                        }
                     }
                 }
             }

@@ -19,6 +19,21 @@
  */
 @property(nonatomic,assign)BOOL blobValue;
 
+/**
+ *  create key index when creating table. default NO
+ */
+@property(nonatomic,assign)BOOL createKeyIndex;
+
+/**
+ *  create filter index when creating table. default NO
+ */
+@property(nonatomic,assign)BOOL createFilterIndex;
+
+/**
+ *  create sort index when creating table. default NO
+ */
+@property(nonatomic,assign)BOOL createSortIndex;
+
 #pragma mark - save
 
 /**
