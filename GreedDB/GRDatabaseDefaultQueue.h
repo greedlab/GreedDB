@@ -107,8 +107,14 @@
 - (NSMutableArray*)getValuesByKey:(id)key filter:(id)filter limit:(NSUInteger)limit;
 - (NSMutableArray*)getValuesByKey:(id)key filter:(id)filter;
 
+- (NSMutableArray*)getKeysByFilter:(id)filter limit:(NSUInteger)limit;
+- (NSMutableArray*)getKeysByFilter:(id)filter;
+
 - (id)getValueByKey:(id)key filter:(id)filter;
+
 - (BOOL)updateValue:(id)value byKey:(id)key filter:(id)filter;
+
+- (BOOL)delByFilter:(id)filter;
 - (BOOL)delByKey:(id)key filter:(id)filter;
 
 /**
@@ -121,8 +127,20 @@
 - (NSMutableArray*)getValuesByKey:(id)key limit:(NSUInteger)limit;
 - (NSMutableArray*)getValuesByKey:(id)key;
 
+- (NSMutableArray*)getKeysByLimit:(NSUInteger)limit;
+- (NSMutableArray*)getKeys;
+
+/**
+ * sort: no or have sort
+ * filter: no filter
+ * limit: no limit
+ */
+#pragma mark - no or have sort - no filter
+
 - (id)getValueByKey:(id)key;
+
 - (BOOL)updateValue:(id)value byKey:(id)key;
+
 - (BOOL)delByKey:(id)key;
 
 @end

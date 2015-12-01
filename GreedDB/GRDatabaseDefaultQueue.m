@@ -258,7 +258,7 @@
 {
     __block NSMutableArray *array = [[NSMutableArray alloc] init];
     [self.queue inDatabase:^(FMDatabase *db){
-        NSMutableString *sql = [NSMutableString stringWithFormat:@"SELECT value FROM %@",self.tableName];
+        NSMutableString *sql = [NSMutableString stringWithFormat:@"SELECT * FROM %@",self.tableName];
         
         [sql appendString:@" WHERE"];
         [sql appendString: key ? [NSString stringWithFormat:@" key = \"%@\"",key] : @" key ISNULL"];
@@ -283,6 +283,34 @@
 - (NSMutableArray*)getValuesByKey:(id)key filter:(id)filter
 {
     return [self getValuesByKey:key filter:filter limit:0];
+}
+
+- (NSMutableArray*)getKeysByFilter:(id)filter limit:(NSUInteger)limit
+{
+    __block NSMutableArray *array = [[NSMutableArray alloc] init];
+    [self.queue inDatabase:^(FMDatabase *db){
+        NSMutableString *sql = [NSMutableString stringWithFormat:@"SELECT * FROM %@",self.tableName];
+        
+        [sql appendString:@" WHERE"];
+        [sql appendString: filter ? [NSString stringWithFormat:@" filter = \"%@\"",filter] : @" filter ISNULL"];
+        
+        if (limit) {
+            [sql appendFormat:@" LIMIT %@",@(limit)];
+        }
+        FMResultSet *rs = [db executeQuery:sql];
+        while ([rs next]) {
+            id key = [rs objectForColumnName:@"key"];
+            if (key) {
+                [array addObject:key];
+            }
+        }
+    }];
+    return array;
+}
+
+- (NSMutableArray*)getKeysByFilter:(id)filter
+{
+    return [self getKeysByFilter:filter limit:0];
 }
 
 - (id)getValueByKey:(id)key filter:(id)filter
@@ -325,6 +353,23 @@
     return result;
 }
 
+- (BOOL)delByFilter:(id)filter
+{
+    __block BOOL result = NO;
+    [self.queue inDatabase:^(FMDatabase *db){
+        NSMutableString *sql = [NSMutableString stringWithFormat:@"DELETE FROM %@",self.tableName];
+        
+        [sql appendString:@" WHERE"];
+        [sql appendString: filter ? [NSString stringWithFormat:@" filter = \"%@\"",filter] : @" filter ISNULL"];
+        
+        result = [db executeUpdate:sql];
+        if (!result) {
+            NSLog(@"error to run %@",sql);
+        }
+    }];
+    return result;
+}
+
 - (BOOL)delByKey:(id)key filter:(id)filter
 {
     __block BOOL result = NO;
@@ -355,7 +400,7 @@
 {
     __block NSMutableArray *array = [[NSMutableArray alloc] init];
     [self.queue inDatabase:^(FMDatabase *db){
-        NSMutableString *sql = [NSMutableString stringWithFormat:@"SELECT value FROM %@",self.tableName];
+        NSMutableString *sql = [NSMutableString stringWithFormat:@"SELECT * FROM %@",self.tableName];
         
         [sql appendString:@" WHERE"];
         [sql appendString: key ? [NSString stringWithFormat:@" key = \"%@\"",key] : @" key ISNULL"];
@@ -378,6 +423,33 @@
 {
     return [self getValuesByKey:key limit:0];
 }
+
+- (NSMutableArray*)getKeysByLimit:(NSUInteger)limit
+{
+    __block NSMutableArray *array = [[NSMutableArray alloc] init];
+    [self.queue inDatabase:^(FMDatabase *db){
+        NSMutableString *sql = [NSMutableString stringWithFormat:@"SELECT * FROM %@",self.tableName];
+        
+        if (limit) {
+            [sql appendFormat:@" LIMIT %@",@(limit)];
+        }
+        FMResultSet *rs = [db executeQuery:sql];
+        while ([rs next]) {
+            id key = [rs objectForColumnName:@"key"];
+            if (key) {
+                [array addObject:key];
+            }
+        }
+    }];
+    return array;
+}
+
+- (NSMutableArray*)getKeys
+{
+    return [self getKeysByLimit:0];
+}
+
+#pragma mark - no or have sort - no filter
 
 - (id)getValueByKey:(id)key
 {

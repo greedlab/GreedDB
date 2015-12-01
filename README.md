@@ -1,3 +1,17 @@
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
+
+- [GreedDB [![Join the chat at https://gitter.im/greedlab/GreedDB](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/greedlab/GreedDB?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge) [![Build Status](https://travis-ci.org/greedlab/GreedDB.svg?branch=master)](https://travis-ci.org/greedlab/GreedDB)](#greeddb-join-the-chat-at-httpsgitterimgreedlabgreeddbhttpsbadgesgitterimjoinchatsvghttpsgitterimgreedlabgreeddbutm_sourcebadge&utm_mediumbadge&utm_campaignpr-badge&utm_contentbadge-build-statushttpstravis-ciorggreedlabgreeddbsvgbranchmasterhttpstravis-ciorggreedlabgreeddb)
+- [Installation](#installation)
+- [Usage](#usage)
+  - [[GRDatabaseDefaultQueue](https://github.com/greedlab/GreedDB/blob/master/GreedDB/GRDatabaseDefaultQueue.h)](#grdatabasedefaultqueuehttpsgithubcomgreedlabgreeddbblobmastergreeddbgrdatabasedefaultqueueh)
+  - [[GRDatabaseMultFilterQueue](https://github.com/greedlab/GreedDB/blob/master/GreedDB/GRDatabaseMultFilterQueue.h)](#grdatabasemultfilterqueuehttpsgithubcomgreedlabgreeddbblobmastergreeddbgrdatabasemultfilterqueueh)
+- [Release Notes](#release-notes)
+- [LICENSE](#license)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 # GreedDB [![Join the chat at https://gitter.im/greedlab/GreedDB](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/greedlab/GreedDB?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge) [![Build Status](https://travis-ci.org/greedlab/GreedDB.svg?branch=master)](https://travis-ci.org/greedlab/GreedDB) 
 
  A storage for ios. based on [FMDB](https://github.com/ccgus/fmdb) and [GreedJSON](https://github.com/greedlab/GreedJSON). can save NSDictionary,NSArray,NSData,NSString,NSNumber or NSObject  directly
