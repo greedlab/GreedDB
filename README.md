@@ -27,6 +27,10 @@ storage for the model [GRDatabaseDefaultModel](https://github.com/greedlab/Greed
     NSLog(@"%@",_database.dbPath);
     
     [_database setTableName:@"testDefault"];
+    [_database setCreateFilterIndex:YES];
+    [_database setCreateKeyIndex:YES];
+    [_database setCreateSortIndex:YES];
+    
     [_database recreateTable];
 }
 
@@ -111,6 +115,7 @@ used for getting value from mult filters. eg :search with more keys
 * 0.0.1 first version
 * 0.0.2 add limit to GRDatabaseDefaultQueue
 * 0.0.3 replace MJExtension with GreedJSON
-* 
+* 0.0.5 whether create index is customed now
+
 # LICENSE
 MIT
