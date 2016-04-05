@@ -39,12 +39,11 @@ pod 'GreedJSON'
 + (id)gr_objectFromDictionary:(NSDictionary*)dictionary
 ```
 
-# Release Notes
-* 0.0.1 first version
-* 0.0.2 change method toObject to gr_object
-* 0.0.3 add model to NSDictionary and NSDictionary to model
-* 0.0.5 change method to propertyNames to gr_propertyNames
-* 0.0.8 delete gr_allowedPropertyNames and fix some bug
+# Change Log
+
+[CHANGELOG](CHANGELOG.md)
+
 
 # LICENSE
-MIT
+
+[MIT](LICENSE)

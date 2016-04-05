@@ -11,12 +11,17 @@
 + (BOOL)isPropertyReadOnly:(Class)aClass propertyName:(NSString*)propertyName;
 
 /**
- *  get the class of a property [propertyName] for the class [aClass]
+ *  all property classes ins class
+ */
++ (NSMutableDictionary <NSString *, NSMutableDictionary *> *)allPropertyClassesInClass:(Class)aClass;
+
+/**
+ *  get the class of the property [propertyName] for the class [aClass]
  *
  *  @param propertyName property
  *  @param aClass        class
  *
- *  @return the class of a property
+ *  @return the class of the property
  */
 + (Class)propertyClassForPropertyName:(NSString *)propertyName ofClass:(Class)aClass;
 

@@ -11,9 +11,7 @@
 @interface NSData (GreedJSON)
 
 /**
- *  format to NSDictionary or NSArray
- *
- *  @return NSDictionary or NSArray
+ *  format NSData to NSDictionary or NSArray
  */
 - (__kindof NSObject*)gr_object;
 

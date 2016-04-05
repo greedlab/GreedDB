@@ -13,12 +13,12 @@
 #pragma mark - property getter
 
 /**
- *  the property names only in this class
+ *  all property names only in this class
  */
 - (NSArray*)gr_propertyNames;
 
 /**
- *  the property names in this class and all super classes
+ *  all property names in this class and all super classes
  */
 - (NSMutableArray*)gr_allPropertyNames;
 
@@ -36,21 +36,27 @@
  */
 + (BOOL)gr_useNullProperty;
 
-+ (NSArray*)gr_ignoredPropertyNames;
+/**
+ *  get all ignored property names
+ *
+ */
++ (NSArray<NSString *> *)gr_ignoredPropertyNames;
 
 /**
  *  @{propertyName:dictionaryKey}
- *
  */
-+ (NSDictionary*)gr_replacedPropertyNames;
++ (NSDictionary<NSString *, NSString *> *)gr_replacedPropertyNames;
 
-+ (NSDictionary *)gr_classInArray;
+/**
+ *  class in array
+ */
++ (NSDictionary<NSString *, Class > *)gr_classInArray;
 
 #pragma mark - Foundation
 
 - (BOOL)gr_isFromFoundation;
 
-#pragma mark - parse
+#pragma mark - format
 
 /**
  *  update Model with NSDictionary
@@ -58,14 +64,12 @@
 - (instancetype)gr_setDictionary:(NSDictionary*)dictionary;
 
 /**
- *  NSDictionary to Model
+ *  init Model with NSDictionary
  */
 + (id)gr_objectFromDictionary:(NSDictionary*)dictionary;
 
 /**
- *  get NSMutableDictionary for the model based from NSObject, if gr_isFromFoundation will return self
- *
- *  @return if gr_isFromFoundation return self,else return NSMutableDictionary
+ *  get NSMutableDictionary from model, if gr_isFromFoundation return self
  */
 - (__kindof NSObject *)gr_dictionary;
 

@@ -10,7 +10,14 @@
 
 @interface NSDictionary (GreedJSON)
 
+/**
+ *  format NSDictionary to NSString
+ */
 - (NSString*)gr_JSONString;
+
+/**
+ *  format NSDictionary to NSData
+ */
 - (NSData*)gr_JSONData;
 
 @end

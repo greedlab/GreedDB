@@ -46,7 +46,7 @@
     return NO;
 }
 
-+ (NSArray*)gr_ignoredPropertyNames
++ (NSArray<NSString *> *)gr_ignoredPropertyNames
 {
     NSArray *array = nil;
     Class superClass = class_getSuperclass([self class]);
@@ -56,7 +56,7 @@
     return array;
 }
 
-+ (NSDictionary*)gr_replacedPropertyNames
++ (NSDictionary<NSString *, NSString *> *)gr_replacedPropertyNames
 {
     NSDictionary *dictionary = nil;
     Class superClass = class_getSuperclass([self class]);
@@ -66,7 +66,7 @@
     return dictionary;
 }
 
-+ (NSDictionary *)gr_classInArray
++ (NSDictionary<NSString *, Class > *)gr_classInArray
 {
     NSDictionary *dictionary = nil;
     Class superClass = class_getSuperclass([self class]);
@@ -112,33 +112,76 @@
             return;
         }
         
+        Class klass = [GRJSONHelper propertyClassForPropertyName:key ofClass:aClass];
+        if (!klass) {
+            return;
+        }
         if ([value isKindOfClass:[NSDictionary class]]) { // handle dictionary
-            Class klass = [GRJSONHelper propertyClassForPropertyName:key ofClass:aClass];
+            NSDictionary *dictionary = (NSDictionary*)value;
+            if (dictionary.count == 0) {
+                return;
+            }
             if (klass == [NSDictionary class]) {
                 [self setValue:value forKey:key];
+            } else if (klass == [NSNumber class]
+                       || klass == [NSString class]
+                       || klass == [NSURL class]
+                       || klass == [NSArray class]) {
+                return;
             } else {
                 [self setValue:[[klass class] gr_objectFromDictionary:value] forKey:key];
             }
         } else if ([value isKindOfClass:[NSArray class]]) { // handle array
-            NSMutableArray *childObjects = [NSMutableArray arrayWithCapacity:[(NSArray*)value count]];
-            [value enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-                if ([[obj class] isSubclassOfClass:[NSDictionary class]]) {
-                    Class arrayItemClass = [[self gr_allClassInArray] objectForKey:key];
-                    if (!arrayItemClass || arrayItemClass == [NSDictionary class]) {
-                        [childObjects addObject:obj];
-                    } else {
-                        NSObject *child = [[arrayItemClass class] gr_objectFromDictionary:obj];
-                        [childObjects addObject:child];
+            NSArray *array = (NSArray*)value;
+            if (array.count == 0) {
+                return;
+            }
+            if (klass != [NSArray class]) {
+                return;
+            }
+            NSMutableArray *childObjects = [[NSMutableArray alloc] init];
+            [array enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+                Class bClass = [obj class];
+                if ([bClass isSubclassOfClass:[NSDictionary class]]) {
+                    NSDictionary *dictionary = (NSDictionary*)obj;
+                    if (dictionary.count) {
+                        Class arrayItemClass = [[self gr_allClassInArray] objectForKey:key];
+                        if (!arrayItemClass || arrayItemClass == [NSDictionary class]) {
+                            [childObjects addObject:obj];
+                        } else {
+                            NSObject *child = [[arrayItemClass class] gr_objectFromDictionary:obj];
+                            [childObjects addObject:child];
+                        }
+                    }
+                } else if ([bClass isSubclassOfClass:[NSArray class]]) {
+                    NSArray *array = (NSArray*)obj;
+                    if (array.count) {
+                        [childObjects addObject:array];
                     }
                 } else {
                     [childObjects addObject:obj];
                 }
             }];
-            
-            [self setValue:childObjects forKey:key];
-        } else {
-            // handle all others
-            [self setValue:value forKey:key];
+            if (childObjects.count) {
+                [self setValue:childObjects forKey:key];
+            }
+        } else if ([value isKindOfClass:[NSNumber class]]) {
+            if (klass == [NSNumber class]) {
+                [self setValue:value forKey:key];
+            } else if (klass == [NSString class]) {
+                // if value is NSNumber and property class is NSString,format value to NSString
+                [self setValue:[value stringValue] forKey:key];
+            }
+        } else if ([value isKindOfClass:[NSString class]])   {
+            if (klass == [NSString class]) {
+                [self setValue:value forKey:key];
+            } else if (klass == [NSNumber class]) {
+                // if value is NSString and property class is NSNumber,format value to NSNumber
+                [self setValue:[NSNumber numberWithDouble:[value doubleValue]] forKey:key];
+            } else if (klass == [NSURL class]) {
+                // if value is NSString and property class is NSURL,format value to NSURL
+                [self setValue:[NSURL URLWithString:value] forKey:key];
+            }
         }
     }];
     return self;
@@ -194,7 +237,6 @@
             }
         }
     }];
-    
     return dic;
 }
 

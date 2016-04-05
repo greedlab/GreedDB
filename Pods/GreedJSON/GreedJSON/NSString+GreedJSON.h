@@ -11,7 +11,7 @@
 @interface NSString (GreedJSON)
 
 /**
- *  format to NSDictionary or NSArray
+ *  format NSString to NSDictionary or NSArray
  *
  *  @return NSDictionary or NSArray
  */
