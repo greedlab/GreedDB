@@ -10,9 +10,9 @@
 
 @interface GRTestDefaultModel : NSObject
 
-@property(nonatomic,strong)NSString *string;
-@property(nonatomic,assign)NSInteger integer;
+@property (nonatomic, strong) NSString *string;
+@property (nonatomic, assign) NSInteger integer;
 
-+ (NSString*)filterForFilter1:(NSString*)filter1 filter2:(NSString*)filter2;
++ (NSString *)filterForFilter1:(NSString *)filter1 filter2:(NSString *)filter2;
 
 @end

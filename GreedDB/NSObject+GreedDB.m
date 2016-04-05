@@ -13,25 +13,23 @@
 
 #pragma mark - public
 
-+ (id)ModelWithJsonString:(NSString*)jsonString
-{
++ (id)ModelWithJsonString:(NSString *)jsonString {
     NSDictionary *dictionary = [jsonString gr_object];
     return [[self class] gr_objectFromDictionary:dictionary];
 }
 
-- (NSString *)gr_autoJSONString
-{
+- (NSString *)gr_autoJSONString {
     if (self) {
         if ([self isKindOfClass:[NSString class]]) {
-            return (NSString*)self;
+            return (NSString *) self;
         } else if ([self isKindOfClass:[NSDictionary class]]) {
-            return [(NSDictionary*)self gr_JSONString];
+            return [(NSDictionary *) self gr_JSONString];
         } else if ([self isKindOfClass:[NSArray class]]) {
-            return [(NSArray*)self gr_JSONString];
+            return [(NSArray *) self gr_JSONString];
         } else if ([self isKindOfClass:[NSData class]]) {
-            return [[NSString alloc] initWithData:(NSData*)self encoding:NSUTF8StringEncoding];
+            return [[NSString alloc] initWithData:(NSData *) self encoding:NSUTF8StringEncoding];
         } else if ([self isKindOfClass:[NSNumber class]]) {
-            return [(NSNumber*)self stringValue];
+            return [(NSNumber *) self stringValue];
         } else {
             NSDictionary *dictionary = [self gr_dictionary];
             return [dictionary gr_JSONString];
@@ -41,10 +39,9 @@
     }
 }
 
-- (NSMutableDictionary*)gr_noNUllDictionary
-{
+- (NSMutableDictionary *)gr_noNUllDictionary {
     NSMutableDictionary *dictionary = [self gr_dictionary];
-    [dictionary enumerateKeysAndObjectsUsingBlock:^(id  _Nonnull key, id  _Nonnull obj, BOOL * _Nonnull stop) {
+    [dictionary enumerateKeysAndObjectsUsingBlock:^(id _Nonnull key, id _Nonnull obj, BOOL *_Nonnull stop) {
         if (obj == [NSNull null]) {
             [dictionary removeObjectForKey:key];
         }

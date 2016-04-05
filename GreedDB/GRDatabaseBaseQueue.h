@@ -13,25 +13,24 @@
 /**
  *  表操作
  */
-@interface GRDatabaseBaseQueue : NSObject
-{
+@interface GRDatabaseBaseQueue : NSObject {
     NSString *_tableName;
 }
 
 /**
  *  table name
  */
-@property(nonatomic,strong)NSString *tableName;
+@property (nonatomic, strong) NSString *tableName;
 
 /**
  *  databse operation queue
  */
-@property(nonatomic,strong)FMDatabaseQueue *queue;
+@property (nonatomic, strong) FMDatabaseQueue *queue;
 
 /**
  *  the path of database file
  */
-@property(nonatomic,strong)NSString *dbPath;
+@property (nonatomic, strong) NSString *dbPath;
 
 #pragma mark - public
 

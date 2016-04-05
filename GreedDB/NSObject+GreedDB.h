@@ -11,9 +11,9 @@
 
 @interface NSObject (GreedDB)
 
-+ (id)ModelWithJsonString:(NSString*)jsonString;
++ (id)ModelWithJsonString:(NSString *)jsonString;
 
 - (NSString *)gr_autoJSONString;
-- (NSMutableDictionary*)gr_noNUllDictionary;
+- (NSMutableDictionary *)gr_noNUllDictionary;
 
 @end

@@ -11,8 +11,7 @@
 
 @implementation GRDatabaseMultFilterQueue
 
-- (instancetype)init
-{
+- (instancetype)init {
     self = [super init];
     if (self) {
         _tableName = @"multFilterQueue";
@@ -23,34 +22,33 @@
 
 #pragma mark - GRDatabaseBaseQueue
 
-- (BOOL)createTable
-{
+- (BOOL)createTable {
     if (_filterNames.count == 0) {
         return NO;
     }
     __block BOOL result = YES;
-    [self.queue inDatabase:^(FMDatabase *db){
+    [self.queue inDatabase:^(FMDatabase *db) {
         if (![db tableExists:self.tableName]) {
-            NSMutableString *sql = [[NSMutableString alloc] initWithFormat:@"CREATE TABLE %@",self.tableName];
-            
-            [sql appendFormat:@" (%@ TEXT,",self.valueName];
+            NSMutableString *sql = [[NSMutableString alloc] initWithFormat:@"CREATE TABLE %@", self.tableName];
+
+            [sql appendFormat:@" (%@ TEXT,", self.valueName];
             for (NSInteger index = 0; index < _filterNames.count; index++) {
                 NSString *filter = [_filterNames objectAtIndex:index];
-                [sql appendString: (index == _filterNames.count - 1) ? [NSString stringWithFormat:@" %@ TEXT)",filter] : [NSString stringWithFormat:@" %@ TEXT,",filter]];
+                [sql appendString:(index == _filterNames.count - 1) ? [NSString stringWithFormat:@" %@ TEXT)", filter] : [NSString stringWithFormat:@" %@ TEXT,", filter]];
             }
             result = [db executeUpdate:sql];
             if (!result) {
-                NSLog(@"error to run : %@",sql);
+                NSLog(@"error to run : %@", sql);
             } else {
                 if (_createFilterIndex) {
                     for (NSInteger index = 0; index < _filterNames.count; index++) {
                         NSString *filter = [_filterNames objectAtIndex:index];
-                        NSString *filterIndex = [NSString stringWithFormat:@"%@Index",filter];
+                        NSString *filterIndex = [NSString stringWithFormat:@"%@Index", filter];
                         {
-                            NSString *sql = [NSString stringWithFormat:@"CREATE INDEX %@ ON %@ (%@)",filterIndex,self.tableName,filter];
+                            NSString *sql = [NSString stringWithFormat:@"CREATE INDEX %@ ON %@ (%@)", filterIndex, self.tableName, filter];
                             result = [db executeUpdate:sql];
                             if (!result) {
-                                NSLog(@"error to run : %@",sql);
+                                NSLog(@"error to run : %@", sql);
                             }
                         }
                     }
@@ -63,34 +61,32 @@
 
 #pragma mark - public
 
-- (BOOL)saveWithValueFiltersDictionary:(NSDictionary*)dictionary
-{
+- (BOOL)saveWithValueFiltersDictionary:(NSDictionary *)dictionary {
     __block BOOL result = NO;
-    [self.queue inDatabase:^(FMDatabase *db){
-        NSMutableString *sql = [NSMutableString stringWithFormat:@"INSERT INTO %@ VALUES",self.tableName];
-        [sql appendFormat:@" (:%@,",self.valueName];
+    [self.queue inDatabase:^(FMDatabase *db) {
+        NSMutableString *sql = [NSMutableString stringWithFormat:@"INSERT INTO %@ VALUES", self.tableName];
+        [sql appendFormat:@" (:%@,", self.valueName];
         for (NSInteger index = 0; index < _filterNames.count; index++) {
             NSString *filter = [_filterNames objectAtIndex:index];
-            [sql appendString: (index == _filterNames.count - 1) ? [NSString stringWithFormat:@" :%@)",filter] : [NSString stringWithFormat:@" :%@,",filter]];
+            [sql appendString:(index == _filterNames.count - 1) ? [NSString stringWithFormat:@" :%@)", filter] : [NSString stringWithFormat:@" :%@,", filter]];
         }
         result = [db executeUpdate:sql withParameterDictionary:dictionary];
         if (!result) {
-            NSLog(@"error to run : %@",sql);
+            NSLog(@"error to run : %@", sql);
         }
     }];
     return result;
 }
 
-- (NSMutableArray*)getValuesByFiltersDictionary:(NSDictionary*)dictionary
-{
+- (NSMutableArray *)getValuesByFiltersDictionary:(NSDictionary *)dictionary {
     __block NSMutableArray *array = [[NSMutableArray alloc] init];
-    [self.queue inDatabase:^(FMDatabase *db){
-        NSMutableString *sql = [NSMutableString stringWithFormat:@"SELECT %@ FROM %@",_valueName, _tableName];
+    [self.queue inDatabase:^(FMDatabase *db) {
+        NSMutableString *sql = [NSMutableString stringWithFormat:@"SELECT %@ FROM %@", _valueName, _tableName];
         NSArray *keys = [dictionary allKeys];
         for (NSInteger index = 0; index < keys.count; index++) {
             NSString *key = [keys objectAtIndex:index];
             [sql appendString:(index == 0) ? @" WHERE" : @" AND"];
-            [sql appendFormat:@" %@ = ?",key];
+            [sql appendFormat:@" %@ = ?", key];
         }
         FMResultSet *rs = [db executeQuery:sql withArgumentsInArray:[dictionary allValues]];
         while ([rs next]) {
@@ -103,20 +99,20 @@
     return array;
 }
 
-- (BOOL)delByValueFiltersDictionary:(NSDictionary*)dictionary;
+- (BOOL)delByValueFiltersDictionary:(NSDictionary *)dictionary;
 {
     __block BOOL result = NO;
-    [self.queue inDatabase:^(FMDatabase *db){
-        NSMutableString *sql = [NSMutableString stringWithFormat:@"DELETE FROM %@",self.tableName];
+    [self.queue inDatabase:^(FMDatabase *db) {
+        NSMutableString *sql = [NSMutableString stringWithFormat:@"DELETE FROM %@", self.tableName];
         NSArray *keys = [dictionary allKeys];
         for (NSInteger index = 0; index < keys.count; index++) {
             NSString *key = [keys objectAtIndex:index];
             [sql appendString:(index == 0) ? @" WHERE" : @" AND"];
-            [sql appendFormat:@" %@ = ?",key];
+            [sql appendFormat:@" %@ = ?", key];
         }
         result = [db executeUpdate:sql withArgumentsInArray:[dictionary allValues]];
         if (!result) {
-            NSLog(@"error to run : %@",sql);
+            NSLog(@"error to run : %@", sql);
         }
     }];
     return result;

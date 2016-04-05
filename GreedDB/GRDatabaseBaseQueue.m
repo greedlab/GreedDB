@@ -12,8 +12,7 @@
 
 #pragma mark - init
 
-- (instancetype)init
-{
+- (instancetype)init {
     self = [super init];
     if (self) {
         _tableName = @"baseQueue";
@@ -23,18 +22,16 @@
 
 #pragma mark - getter
 
-- (NSString*)dbPath
-{
+- (NSString *)dbPath {
     if (!_dbPath) {
-        NSString *bundleName = [[[NSBundle mainBundle] infoDictionary] objectForKey:(NSString*)kCFBundleNameKey];
+        NSString *bundleName = [[[NSBundle mainBundle] infoDictionary] objectForKey:(NSString *) kCFBundleNameKey];
         NSString *fileName = [bundleName stringByAppendingString:@".greedBb"];
         _dbPath = [[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject] stringByAppendingPathComponent:fileName];
     }
     return _dbPath;
 }
 
-- (FMDatabaseQueue *)queue
-{
+- (FMDatabaseQueue *)queue {
     if (!_queue) {
         _queue = [FMDatabaseQueue databaseQueueWithPath:self.dbPath];
     }
@@ -43,39 +40,35 @@
 
 #pragma mark - public
 
-- (BOOL)createTable
-{
+- (BOOL)createTable {
     // TODO
-    
+
     return YES;
 }
 
-- (BOOL)clearTable
-{
+- (BOOL)clearTable {
     [self.queue inDatabase:^(FMDatabase *db) {
-        NSString * sql = [NSString stringWithFormat:@"DELETE FROM %@",self.tableName];
+        NSString *sql = [NSString stringWithFormat:@"DELETE FROM %@", self.tableName];
         BOOL res = [db executeUpdate:sql];
         if (!res) {
-            NSLog(@"error to run:%@",sql);
+            NSLog(@"error to run:%@", sql);
         }
     }];
     return YES;
 }
 
-- (BOOL)dropTable
-{
+- (BOOL)dropTable {
     [self.queue inDatabase:^(FMDatabase *db) {
-        NSString * sql = [NSString stringWithFormat:@"DROP TABLE %@",self.tableName];
+        NSString *sql = [NSString stringWithFormat:@"DROP TABLE %@", self.tableName];
         BOOL res = [db executeUpdate:sql];
         if (!res) {
-            NSLog(@"error to run:%@",sql);
+            NSLog(@"error to run:%@", sql);
         }
     }];
     return YES;
 }
 
-- (BOOL)recreateTable
-{
+- (BOOL)recreateTable {
     [self dropTable];
     return [self createTable];
 }

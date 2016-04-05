@@ -11,18 +11,15 @@
 
 @implementation GRDatabaseDefaultModel
 
-+ (NSArray *)gr_ignoredPropertyNames
-{
-    return @[@"value"];
++ (NSArray *)gr_ignoredPropertyNames {
+    return @[ @"value" ];
 }
 
-+ (BOOL)gr_useNullProperty
-{
++ (BOOL)gr_useNullProperty {
     return YES;
 }
 
-- (NSMutableDictionary *)dbDictionary
-{
+- (NSMutableDictionary *)dbDictionary {
     NSMutableDictionary *keyValues = [self gr_dictionary];
     NSString *value = [_value gr_autoJSONString];
     if (value) {

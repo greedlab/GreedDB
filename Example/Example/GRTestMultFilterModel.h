@@ -10,14 +10,14 @@
 
 @interface GRTestMultFilterModel : NSObject
 
-@property(nonatomic,strong)NSString *value;
+@property (nonatomic, strong) NSString *value;
 
-@property(nonatomic,strong)NSString *filter1;
-@property(nonatomic,strong)NSString *filter2;
-@property(nonatomic,strong)NSString *filter3;
-@property(nonatomic,strong)NSString *filter4;
+@property (nonatomic, strong) NSString *filter1;
+@property (nonatomic, strong) NSString *filter2;
+@property (nonatomic, strong) NSString *filter3;
+@property (nonatomic, strong) NSString *filter4;
 
-+ (NSString*)valueName;
-+ (NSArray*)filterNames;
++ (NSString *)valueName;
++ (NSArray *)filterNames;
 
 @end

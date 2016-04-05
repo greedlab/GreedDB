@@ -11,7 +11,7 @@
 
 @interface GRTestViewController : UIViewController
 
-@property(nonatomic,strong)GRDatabaseDefaultQueue *database;
-@property(nonatomic,strong)GRDatabaseMultFilterQueue *multFilterQueue;
+@property (nonatomic, strong) GRDatabaseDefaultQueue *database;
+@property (nonatomic, strong) GRDatabaseMultFilterQueue *multFilterQueue;
 
 @end

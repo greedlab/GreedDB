@@ -1,18 +1,16 @@
 # GreedDB [![Join the chat at https://gitter.im/greedlab/GreedDB](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/greedlab/GreedDB?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge) [![Build Status](https://travis-ci.org/greedlab/GreedDB.svg?branch=master)](https://travis-ci.org/greedlab/GreedDB) 
 
- A storage for ios. based on [FMDB](https://github.com/ccgus/fmdb) and [GreedJSON](https://github.com/greedlab/GreedJSON). could save NSDictionary,NSArray,NSData,NSString,NSNumber or NSObject  directly
+基于 [FMDB](https://github.com/ccgus/fmdb) 和 [GreedJSON](https://github.com/greedlab/GreedJSON) 的iOS存储框架，可直接存储NSDictionary,NSArray,NSData,NSString,NSNumber,NSObject 等
  
- [中文版](README-cn.md)
- 
-# Installation
+# 安装
 
 pod 'GreedDB'
 
-# Usage
+# 使用
 
 ## [GRDatabaseDefaultQueue](https://github.com/greedlab/GreedDB/blob/master/GreedDB/GRDatabaseDefaultQueue.h)
 
-storage for the default model [GRDatabaseDefaultModel](https://github.com/greedlab/GreedDB/blob/master/GreedDB/GRDatabaseDefaultModel.h)
+存储默认模型 [GRDatabaseDefaultModel](https://github.com/greedlab/GreedDB/blob/master/GreedDB/GRDatabaseDefaultModel.h)
 
 ``` objc
 /**
@@ -74,7 +72,7 @@ storage for the default model [GRDatabaseDefaultModel](https://github.com/greedl
 
 ## [GRDatabaseMultFilterQueue](https://github.com/greedlab/GreedDB/blob/master/GreedDB/GRDatabaseMultFilterQueue.h)
 
-storage for mult filters. eg :search with more keys
+存储有多个过滤条件的模型.例如：搜索时的时间、地点、关键词等
 
 ``` objc
 /**
@@ -124,10 +122,10 @@ storage for mult filters. eg :search with more keys
 }
 ```
 
-# Release Notes
+# 更新记录
 
 [CHANGELOG.md](CHANGELOG.md)
 
-# LICENSE
+# 许可证
 
 [MIT](LICENSE)

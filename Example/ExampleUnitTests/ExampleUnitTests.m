@@ -14,8 +14,8 @@
 
 @interface ExampleUnitTests : XCTestCase
 
-@property(nonatomic,strong)GRDatabaseDefaultQueue *database;
-@property(nonatomic,strong)GRDatabaseMultFilterQueue *multFilterQueue;
+@property (nonatomic, strong) GRDatabaseDefaultQueue *database;
+@property (nonatomic, strong) GRDatabaseMultFilterQueue *multFilterQueue;
 
 @end
 
@@ -45,8 +45,7 @@
 
 #pragma mark - Default
 
-- (void)testDefault
-{
+- (void)testDefault {
     [self initDefault];
     [self saveDefault];
     [self getDefault];
@@ -54,49 +53,56 @@
     [self getDefault];
 }
 
-- (void)initDefault
-{
+/**
+ *  create table
+ */
+- (void)initDefault {
     self.database = [[GRDatabaseDefaultQueue alloc] init];
-    NSLog(@"%@",_database.dbPath);
-    
+    NSLog(@"%@", _database.dbPath);
+
     [_database setTableName:@"testDefault"];
     [_database recreateTable];
 }
 
-- (void)saveDefault
-{
+/**
+ *  insert data
+ */
+- (void)saveDefault {
     GRTestDefaultModel *model = [[GRTestDefaultModel alloc] init];
     model.string = @"string";
-    model.integer =  1;
+    model.integer = 1;
     NSString *filter = [GRTestDefaultModel filterForFilter1:@"filter1" filter2:@"filter1"];
-    
+
     GRDatabaseDefaultModel *dbModel = [[GRDatabaseDefaultModel alloc] init];
     [dbModel setKey:@1];
     [dbModel setValue:model];
     [dbModel setFilter:filter];
-    
+
     [_database saveWithModel:dbModel];
 }
 
-- (void)updateDefault
-{
+/**
+ *  update data
+ */
+- (void)updateDefault {
     NSString *filter = [GRTestDefaultModel filterForFilter1:@"filter1" filter2:@"filter1"];
-    
+
     GRTestDefaultModel *model = [[GRTestDefaultModel alloc] init];
     model.string = @"update";
-    model.integer =  2;
-    
+    model.integer = 2;
+
     [_database updateValue:model byKey:@1 filter:filter];
 }
 
-- (void)getDefault
-{
+/**
+ *  get data
+ */
+- (void)getDefault {
     NSString *filter = [GRTestDefaultModel filterForFilter1:@"filter1" filter2:@"filter1"];
-    
-    NSArray *array = [_database getValuesByKey:@1 filter:filter];
-    
-    NSLog(@"%@",array);
-}
 
+    NSArray *array = [_database getValuesByKey:@1 filter:filter];
+
+    NSLog(@"%@", array);
+}
 
 @end

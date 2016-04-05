@@ -11,18 +11,15 @@
 
 @implementation GRTestMultFilterModel
 
-+ (BOOL)gr_useNullProperty
-{
++ (BOOL)gr_useNullProperty {
     return YES;
 }
 
-+ (NSString*)valueName
-{
++ (NSString *)valueName {
     return @"value";
 }
 
-+ (NSArray*)filterNames
-{
++ (NSArray *)filterNames {
     NSMutableArray *array = [[self gr_propertyNames] mutableCopy];
     NSString *valueName = [self valueName];
     if (valueName) {
